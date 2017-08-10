@@ -24,7 +24,7 @@ class Show extends React.Component {
     }
 
     handleBtnClick() {
-        var totalShows = this.props.show.length;
+        var totalShows = this.props.db.length;
         this.setState(function(prevState) {
             return {
                 showIndex: (prevState.showIndex + 1) % totalShows
@@ -33,10 +33,12 @@ class Show extends React.Component {
     }
 
     render() {
+        var show = this.props.db[this.state.showIndex]; 
+        console.log(this.props.db);
         return (
             <div>
-            <Type showType={this.props.show[this.state.showIndex].type} />
-            <button onClick={this.handleBtnCLick}>Next</button>
+            <Type showType={show.type} />
+            <button onClick={this.handleBtnClick.bind(this)}>Next</button>
             </div>
         );
     }
