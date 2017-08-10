@@ -4,6 +4,6 @@ var Show = require("./app");
 var db = require("./db");
 
 ReactDOM.render (
-    <Show show={db[0]} />,
+    <Show show={db} />,
     document.getElementById("root")
 );
