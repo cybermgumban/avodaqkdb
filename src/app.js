@@ -6,7 +6,7 @@ class Type extends React.Component {
     }
     render() {
         return (
-            <h1>Type: {this.props.showType}</h1>
+            <h3>Type: {this.props.showType}</h3>
         );
     }
 }
@@ -17,7 +17,7 @@ class Title extends React.Component {
     }
     render() {
         return (
-            <h1>Title: {this.props.showTitle}</h1>
+            <h3>Title: {this.props.showTitle}</h3>
         );
     }
 }
@@ -28,7 +28,7 @@ class Description extends React.Component {
     }
     render() {
         return (
-            <h1>Description: {this.props.showDescription}</h1>
+            <h3>Description: {this.props.showDescription}</h3>
         );
     }
 }
@@ -39,7 +39,7 @@ class Workaround extends React.Component {
     }
     render() {
         return (
-            <h1>Workaround: {this.props.showWorkaround}</h1>
+            <h3>Workaround: {this.props.showWorkaround}</h3>
         );
     }
 }
