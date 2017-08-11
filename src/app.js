@@ -11,6 +11,39 @@ class Type extends React.Component {
     }
 }
 
+class Title extends React.Component {
+    constructor(props)  {
+        super(props);
+    }
+    render() {
+        return (
+            <h1>Type: {this.props.showTitle}</h1>
+        );
+    }
+}
+
+class Description extends React.Component {
+    constructor(props)  {
+        super(props);
+    }
+    render() {
+        return (
+            <h1>Type: {this.props.showDescription}</h1>
+        );
+    }
+}
+
+class Workaround extends React.Component {
+    constructor(props)  {
+        super(props);
+    }
+    render() {
+        return (
+            <h1>Type: {this.props.showWorkaround}</h1>
+        );
+    }
+}
+
 class Show extends React.Component {
     static defaultProps = {
         showIndex: 0
@@ -38,6 +71,9 @@ class Show extends React.Component {
         return (
             <div>
             <Type showType={show.type} />
+            <Title showType={show.title} />
+            <Description showType={show.description} />
+            <Workaround showType={show.workaround} />
             <button onClick={this.handleBtnClick.bind(this)}>Next</button>
             </div>
         );
