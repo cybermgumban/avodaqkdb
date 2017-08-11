@@ -17,7 +17,7 @@ class Title extends React.Component {
     }
     render() {
         return (
-            <h1>Type: {this.props.showTitle}</h1>
+            <h1>Title: {this.props.showTitle}</h1>
         );
     }
 }
@@ -28,7 +28,7 @@ class Description extends React.Component {
     }
     render() {
         return (
-            <h1>Type: {this.props.showDescription}</h1>
+            <h1>Description: {this.props.showDescription}</h1>
         );
     }
 }
@@ -39,7 +39,7 @@ class Workaround extends React.Component {
     }
     render() {
         return (
-            <h1>Type: {this.props.showWorkaround}</h1>
+            <h1>Workaround: {this.props.showWorkaround}</h1>
         );
     }
 }
@@ -71,9 +71,9 @@ class Show extends React.Component {
         return (
             <div>
             <Type showType={show.type} />
-            <Title showType={show.title} />
-            <Description showType={show.description} />
-            <Workaround showType={show.workaround} />
+            <Title showTitle={show.title} />
+            <Description showDescription={show.description} />
+            <Workaround showWorkaround={show.workaround} />
             <button onClick={this.handleBtnClick.bind(this)}>Next</button>
             </div>
         );
