@@ -44,6 +44,20 @@ class Workaround extends React.Component {
     }
 }
 
+class InputForm extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+        <div>
+            <input id="inputtitle" type="text" name="inputtitle" onChange={this.inputtitle}/><br />
+            <textarea id="inputworkaround" type="text" name="inputworkaround" rows="7" cols="30" onChange={this.inputworkaround}></textarea>
+        </div>
+        );
+    }
+}
+
 class Show extends React.Component {
     static defaultProps = {
         showIndex: 0
@@ -70,15 +84,22 @@ class Show extends React.Component {
         console.log(this.props.db);
         return (
             <div>
+            <div>
             <Type showType={show.type} />
             <Title showTitle={show.title} />
             <Description showDescription={show.description} />
             <Workaround showWorkaround={show.workaround} />
-            <button onClick={this.handleBtnClick.bind(this)}>Next</button>
+            <button onClick={this.handleBtnClick.bind(this)}>Next</button><br />
+            </div>
+            <div>
+            <InputForm />
+            </div>
             </div>
         );
     }
 }
+
+
 
 
 module.exports = Show;
