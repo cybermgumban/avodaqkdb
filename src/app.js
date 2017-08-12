@@ -48,11 +48,32 @@ class InputForm extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    handleSubmit() {
+
+        var title = this.state.title;
+
+        this.props.onHandleSubmit({title: title});
+
+        this.setState({
+            title: ""
+    });
+    }
+
+    setValue(field, event) {
+        var object = {};
+        object[field] = event.target.value;
+        this.setState(object);
+    }
+
     render() {
         return (
         <div>
-            <input id="inputtitle" type="text" name="inputtitle" onChange={this.inputtitle}/><br />
-            <textarea id="inputworkaround" type="text" name="inputworkaround" rows="7" cols="30" onChange={this.inputworkaround}></textarea>
+            <form onSubmit={this.handleSubmit}>
+            <input type="text" name="inputtitle" value={this.state.showTitle.title} onChange={this.setValue.bind(this, "title")}/><br />
+            <textarea type="text" name="inputworkaround" rows="7" cols="30" onChange={this.inputworkaround}></textarea><br />
+            <input type="submit" value="submit" />
+            </form>
         </div>
         );
     }
@@ -84,16 +105,12 @@ class Show extends React.Component {
         console.log(this.props.db);
         return (
             <div>
-            <div>
             <Type showType={show.type} />
             <Title showTitle={show.title} />
             <Description showDescription={show.description} />
             <Workaround showWorkaround={show.workaround} />
-            <button onClick={this.handleBtnClick.bind(this)}>Next</button><br />
-            </div>
-            <div>
+            <button onClick={this.handleBtnClick.bind(this)}>Next</button>
             <InputForm />
-            </div>
             </div>
         );
     }
