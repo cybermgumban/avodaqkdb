@@ -50,11 +50,8 @@ class InputForm extends React.Component {
     }
 
     handleSubmit() {
-
         var title = this.state.title;
-
-        this.props.onHandleSubmit({title: title});
-
+        this.props.db.push({title: title});
         this.setState({
             title: ""
     });
@@ -62,15 +59,23 @@ class InputForm extends React.Component {
 
     setValue(field, event) {
         var object = {};
-        object[field] = event.target.value;
+        object[field] = event.target.title;
         this.setState(object);
+
+        return (
+            $.ajax ({
+                url: "./db",
+                type: "POST",
+                data: {title: this.state.title}
+            })
+        );
     }
 
     render() {
         return (
         <div>
             <form onSubmit={this.handleSubmit}>
-            <input type="text" name="inputtitle" value={this.state.showTitle.title} onChange={this.setValue.bind(this, "title")}/><br />
+            <input type="text" name="inputtitle" onChange={this.setValue.bind(this, "title")}/><br />
             <textarea type="text" name="inputworkaround" rows="7" cols="30" onChange={this.inputworkaround}></textarea><br />
             <input type="submit" value="submit" />
             </form>
