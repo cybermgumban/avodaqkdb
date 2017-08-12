@@ -6,4 +6,4 @@ var Show = require("./app");
 ReactDOM.render (
     <Show db={db} />,
     document.getElementById("root")
-);
+)

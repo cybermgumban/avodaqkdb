@@ -1,4 +1,11 @@
 var React = require("react");
+var $ = require("jquery");
+var dbjson = require("./db");
+var fs = require("fs");
+
+//npm install --save jsonfile
+//npm install jquery
+//npm install appendjson
 
 class Type extends React.Component {
     constructor(props)  {
@@ -50,34 +57,30 @@ class InputForm extends React.Component {
     }
 
     handleSubmit() {
-        var title = this.state.title;
-        this.props.db.push({title: title});
-        this.setState({
-            title: ""
-    });
-    }
 
-    setValue(field, event) {
-        var object = {};
-        object[field] = event.target.title;
-        this.setState(object);
-
-        return (
-            $.ajax ({
-                url: "./db",
-                type: "POST",
-                data: {title: this.state.title}
-            })
-        );
     }
 
     render() {
+           var data = {"type":"A"};
+                
+/*            $.ajax ({
+                type: "Post",
+                dataType: "json",
+                asyn: "false",
+                url: "C:/My_Programming_Folder/React_and_Redux/avodaqkdb/src/db.json",
+                data: JSON.stringify(data)
+            })
+*/
+
+            var json = JSON.stringify(data);
+            fs.writeFileSync("./db.json",json);             
+
         return (
         <div>
-            <form onSubmit={this.handleSubmit}>
-            <input type="text" name="inputtitle" onChange={this.setValue.bind(this, "title")}/><br />
+            <form>
+            <input type="text" name="inputtitle"/><br />
             <textarea type="text" name="inputworkaround" rows="7" cols="30" onChange={this.inputworkaround}></textarea><br />
-            <input type="submit" value="submit" />
+            <button onClick={this.handleSubmit}>Submit</button>
             </form>
         </div>
         );
@@ -107,7 +110,6 @@ class Show extends React.Component {
 
     render() {
         var show = this.props.db[this.state.showIndex]; 
-        console.log(this.props.db);
         return (
             <div>
             <Type showType={show.type} />
