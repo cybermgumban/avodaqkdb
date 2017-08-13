@@ -61,20 +61,20 @@ class InputForm extends React.Component {
     }
 
     render() {
-           var data = {"type":"A"};
+/*           var data = {"type":"A"};
                 
-/*            $.ajax ({
+            $.ajax ({
                 type: "Post",
                 dataType: "json",
                 asyn: "false",
                 url: "C:/My_Programming_Folder/React_and_Redux/avodaqkdb/src/db.json",
                 data: JSON.stringify(data)
             })
-*/
+
 
             var json = JSON.stringify(data);
             fs.writeFileSync("./db.json",json);             
-
+*/
         return (
         <div>
             <form>
