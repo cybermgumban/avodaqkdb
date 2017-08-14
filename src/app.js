@@ -97,6 +97,7 @@ class Show extends React.Component {
         this.state = {
             showIndex: this.props.showIndex
         };
+        this.handleBtnClick = this.handleBtnClick.bind(this);
     }
 
     handleBtnClick() {
@@ -116,7 +117,7 @@ class Show extends React.Component {
             <Title showTitle={show.title} />
             <Description showDescription={show.description} />
             <Workaround showWorkaround={show.workaround} />
-            <button onClick={this.handleBtnClick.bind(this)}>Next</button>
+            <button onClick={this.handleBtnClick}>Next</button>
             <InputForm />
             </div>
         );
