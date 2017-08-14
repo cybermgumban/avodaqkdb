@@ -54,6 +54,7 @@ class Workaround extends React.Component {
 class InputForm extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit() {
