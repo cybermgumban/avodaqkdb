@@ -25,4 +25,15 @@ var Banner = function () {
         );
 }
 
+class SearchBar extends React.Component {
+    return (
+        <div>
+        <form>
+            <label>Search</label>
+            <input name="searchHere" />
+        </form>
+        </div>
+    );
+}
+
 module.exports = Banner;
