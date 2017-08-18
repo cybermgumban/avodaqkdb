@@ -1,7 +1,5 @@
 var React = require("react");
-var $ = require("jquery");
 var dbjson = require("./db");
-var fs = require("fs");
 
 //npm install --save jsonfile
 //npm install jquery
