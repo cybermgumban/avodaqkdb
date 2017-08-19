@@ -1,5 +1,5 @@
 var React = require("react");
-var dbjson = require("./db");
+var db = require("../db");
 
 //npm install --save jsonfile
 //npm install jquery
@@ -109,21 +109,18 @@ class Show extends React.Component {
     }
 
     render() {
-        var show = this.props.db[this.state.showIndex]; 
+//        var show = this.props.db[this.state.showIndex]; 
         return (
             <div>
-            <Type showType={show.type} />
-            <Title showTitle={show.title} />
-            <Description showDescription={show.description} />
-            <Workaround showWorkaround={show.workaround} />
+            <Type showType={db[0].type} />
+            <Title showTitle={db.title} />
+            <Description showDescription={db.description} />
+            <Workaround showWorkaround={db.workaround} />
             <button onClick={this.handleBtnClick}>Next</button>
             <InputForm />
             </div>
         );
     }
 }
-
-
-
 
 module.exports = Show;

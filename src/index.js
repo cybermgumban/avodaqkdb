@@ -1,10 +1,14 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var db = require("./db");
-var Show = require("./app");
 var HomePage = require("./components/HomePage");
+var Search = require("./components/Search");
+var App = require("./components/App");
 
 ReactDOM.render (
-    <HomePage />,
+    <div>
+    <HomePage /> <br />
+    <Search /> <br />
+    <App />
+    </div>,
     document.getElementById("root")
 )
