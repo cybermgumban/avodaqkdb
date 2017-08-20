@@ -17,14 +17,40 @@ var btnStyle = {
 };
 
 class Choices extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props.onBtnClick = this.props.onBtnClick.bind(this);
+    }
+
     render() {
         return (
             <div style={choicesStyle}>
-                <button style={btnStyle}>Homepage</button>
-                <button style={btnStyle}>Search</button>
-                <button style={btnStyle}>Add</button>
-                <button style={btnStyle}>Edit</button>
-                <button style={btnStyle}>Delete</button>
+                <button 
+                    style={btnStyle}
+                    value = "homepage"
+                    onClick={this.props.onBtnClick}>
+                    Homepage
+                </button>
+                <button 
+                    style={btnStyle} 
+                    value="search">
+                    Search
+                </button>
+                <button 
+                    style={btnStyle} 
+                    value="add">
+                    Add
+                </button>
+                <button 
+                    style={btnStyle} 
+                    value="edit">
+                    Edit
+                </button>
+                <button 
+                    style={btnStyle} 
+                    value="delete">
+                    Delete
+                </button>
             </div>
         );
     }

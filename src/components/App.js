@@ -1,6 +1,7 @@
 var React = require("react");
 var db = require("../db");
 
+/*
 class Type extends React.Component {
     render() {
         return (
@@ -32,6 +33,7 @@ class Workaround extends React.Component {
         );
     }
 }
+*/
 
 class Show extends React.Component {
     static defaultProps = {
@@ -55,15 +57,32 @@ class Show extends React.Component {
         });
     }
 
+/*
+var show = db[this.state.showIndex];
+<Type showType={show.type} />
+<Title showTitle={show.title} />
+<Description showDescription={show.description} />
+<Workaround showWorkaround={show.workaround} />
+*/
+
     render() {
-        var show = db[this.state.showIndex]; 
+        var result = null;
+
+        if (this.props.result === "homepage") {
+            result = (
+                <div>
+                <h3>Type: {db[this.state.showIndex].type}</h3>
+                <h3>Title: {db[this.state.showIndex].title}</h3>
+                <h3>Description: {db[this.state.showIndex].description}</h3>
+                <h3>Workaround: {db[this.state.showIndex].workaround}</h3>
+                <button onClick={this.handleBtnClick}>Next</button>
+                </div>
+            );
+        }
+
         return (
             <div>
-            <Type showType={show.type} />
-            <Title showTitle={show.title} />
-            <Description showDescription={show.description} />
-            <Workaround showWorkaround={show.workaround} />
-            <button onClick={this.handleBtnClick}>Next</button>
+            {result}
             </div>
         );
     }
