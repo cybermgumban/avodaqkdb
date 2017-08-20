@@ -33,22 +33,26 @@ class Choices extends React.Component {
                 </button>
                 <button 
                     style={btnStyle} 
-                    value="search">
+                    value="search"
+                    onClick={this.props.onBtnClick}>
                     Search
                 </button>
                 <button 
                     style={btnStyle} 
-                    value="add">
+                    value="add"
+                    onClick={this.props.onBtnClick}>
                     Add
                 </button>
                 <button 
                     style={btnStyle} 
-                    value="edit">
+                    value="edit"
+                    onClick={this.props.onBtnClick}>
                     Edit
                 </button>
                 <button 
                     style={btnStyle} 
-                    value="delete">
+                    value="delete"
+                    onClick={this.props.onBtnClick}>
                     Delete
                 </button>
             </div>

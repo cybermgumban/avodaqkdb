@@ -1,7 +1,8 @@
 var React = require("react");
 var Banner = require("./Banner");
-var App = require("./App");
+var Homepage = require("./Homepage");
 var Choices = require("./Choices");
+var Search = require("./Search");
 
 class ShowAll extends React.Component {
     constructor(props) {
@@ -16,7 +17,11 @@ class ShowAll extends React.Component {
         var e = event.target.value;
         var btnClicked = this.state.btnClicked;
         if (e === "homepage") {
+            console.log("homepage");
             btnClicked = "homepage";
+        } else if ( e === "search") {
+            console.log("search");
+            btnClicked = "search";
         }
 
         this.setState ({
@@ -25,12 +30,12 @@ class ShowAll extends React.Component {
     }
 
     render() {
-
         return (
             <div>
             <Banner /> <br />
             <Choices onBtnClick={this.handleBtnClick}/> <br />
-            <App result={this.state.btnClicked}/>
+            <Homepage result={this.state.btnClicked}/>
+            <Search result={this.state.btnClicked} />
             </div>
         );
     }
