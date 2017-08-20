@@ -1,13 +1,13 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var HomePage = require("./components/HomePage");
-var Search = require("./components/Search");
+var Banner = require("./components/Banner");
 var App = require("./components/App");
+var Choices = require("./components/Choices");
 
 ReactDOM.render (
     <div>
-    <HomePage /> <br />
-    <Search /> <br />
+    <Banner /> <br />
+    <Choices /> <br />
     <App />
     </div>,
     document.getElementById("root")
