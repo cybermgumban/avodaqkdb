@@ -35,7 +35,7 @@ class Workaround extends React.Component {
 }
 */
 
-class Show extends React.Component {
+class Homepage extends React.Component {
     static defaultProps = {
         showIndex: 0
     };
@@ -65,17 +65,26 @@ var show = db[this.state.showIndex];
 <Workaround showWorkaround={show.workaround} />
 */
 
+/*
+                <h3>Type: {db[this.state.showIndex].type}</h3>
+                <h3>Title: {db[this.state.showIndex].title}</h3>
+                <h3>Description: {db[this.state.showIndex].description}</h3>
+                <h3>Workaround: {db[this.state.showIndex].workaround}</h3>
+                <button onClick={this.handleBtnClick}>Next</button>
+*/
+
     render() {
         var result = null;
 
         if (this.props.result === "homepage") {
             result = (
                 <div>
-                <h3>Type: {db[this.state.showIndex].type}</h3>
-                <h3>Title: {db[this.state.showIndex].title}</h3>
-                <h3>Description: {db[this.state.showIndex].description}</h3>
-                <h3>Workaround: {db[this.state.showIndex].workaround}</h3>
-                <button onClick={this.handleBtnClick}>Next</button>
+                    <h4>Jabber</h4>
+                    <ul>
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                    </ul>
                 </div>
             );
         }
@@ -88,4 +97,4 @@ var show = db[this.state.showIndex];
     }
 }
 
-module.exports = Show;
+module.exports = Homepage;
