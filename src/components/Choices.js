@@ -27,9 +27,9 @@ class Choices extends React.Component {
             <div style={choicesStyle}>
                 <button 
                     style={btnStyle}
-                    value = "homepage"
+                    value = "showall"
                     onClick={this.props.onBtnClick}>
-                    Homepage
+                    Show All
                 </button>
                 <button 
                     style={btnStyle} 

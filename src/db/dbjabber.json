@@ -1,0 +1,14 @@
+[
+    {
+        "type": "Jabber",
+        "title": "Cannot login on jabber on windows",
+        "description": "unable to login on jabber, getting error",
+        "workaround": ["restart jabber application", "b"]
+    },
+    {
+        "type": "Jabber",
+        "title": "Deleting User",
+        "description": "How to delete users in CUCM",
+        "workaround": "bleh bleh bleh"
+    }
+]

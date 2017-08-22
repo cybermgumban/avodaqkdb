@@ -1,6 +1,6 @@
 var React = require("react");
 var Banner = require("./Banner");
-var Homepage = require("./Homepage");
+var All = require("./All");
 var Choices = require("./Choices");
 var Search = require("./Search");
 var Aed = require("./Aed");
@@ -17,9 +17,9 @@ class ShowAll extends React.Component {
     handleBtnClick(event) {
         var e = event.target.value;
         var btnClicked = this.state.btnClicked;
-        if (e === "homepage") {
-            console.log("homepage");
-            btnClicked = "homepage";
+        if (e === "showall") {
+            console.log("showall");
+            btnClicked = "showall";
         } else if (e === "search") {
             console.log("search");
             btnClicked = "search";
@@ -41,7 +41,7 @@ class ShowAll extends React.Component {
             <div>
             <Banner /> <br />
             <Choices onBtnClick={this.handleBtnClick}/> <br />
-            <Homepage result={this.state.btnClicked}/>
+            <All result={this.state.btnClicked}/>
             <Search result={this.state.btnClicked} />
             <Aed result={this.state.btnClicked} />
             </div>
