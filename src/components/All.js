@@ -3,13 +3,13 @@ var dbjabber = require("../db/dbjabber");
 var dbipphone = require("../db/dbipphone");
 var dbcucm = require("../db/dbcucm");
 
-class Jabber extends React.Component {
+class TitleDescription extends React.Component {
     render() {
         return (
         <div>
         <li>Title: {this.props.showDbJabberTitle} </li>
         <li>Description: {this.props.showDbJabberDescription} </li>
-        <li>Workaround: {this.props.showDbJabberWorkaround} </li>
+        <li>Workaround: {this.props.showDbJabberWorkaround}</li>
         </div>
         );
     }
@@ -40,9 +40,9 @@ class All extends React.Component {
     render() {
         var resultJabber = null;
         var jabber = [];
-    
+ 
         for (var i = 0 ; i<dbjabber.length; i++) {
-            jabber.push(<Jabber showDbJabberTitle={dbjabber[i].title} showDbJabberDescription={dbjabber[i].description} showDbJabberWorkaround={dbjabber[i].workaround} />, <br />)
+            jabber.push(<TitleDescription showDbJabberTitle={dbjabber[i].title} showDbJabberDescription={dbjabber[i].description} showDbJabberWorkaround={dbjabber[i].workaround}/>, <br />)
         }
 
         if (this.props.result === "showall") {
