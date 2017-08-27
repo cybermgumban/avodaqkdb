@@ -32,10 +32,6 @@ var anchorStyle = {
 };
 
 class Choices extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div>
@@ -50,32 +46,32 @@ class Choices extends React.Component {
             </div> 
                 <br />
             <div style={choicesStyle}>
-                <a style={anchorStyle}>
-                    <Link to="/showall">
+                <p style={anchorStyle}>
+                    <Link to="/function/showall">
                         Show All
                     </Link>
-                </a>
-                <a style={anchorStyle}>
+                </p>
+                <p style={anchorStyle}>
                     <Link to="/function/search">
                         Search
                     </Link>
-                </a>
-                <a style={anchorStyle}>
+                </p>
+                <p style={anchorStyle}>
                     <Link to="/function/add">
                         Add
                     </Link>
-                </a>
-                <a style={anchorStyle}>
+                </p>
+                <p style={anchorStyle}>
                     <Link to="/function/edit">
                         Edit
                     </Link>
-                </a>
-                <a style={anchorStyle}>
+                </p>
+                <p style={anchorStyle}>
                     <Link to="/function/delete">
                         Delete
                     </Link>
-                </a>
-            </div>
+                </p>
+            </div> <br />
                 {this.props.children}
             </div>
         );

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Cannot login on jabber on windows",
+        "description": "unable to login on jabber, getting error",
+        "workaround": "restart jabber application"
+    },
+    {
+        "title": "Registration Error",
+        "description": "cannot use phone, showing registration error",
+        "workaround": "restart IP Phone"
+    },
+    {
+        "title": "Adding User",
+        "description": "How to add users in CUCM",
+        "workaround": "blah blah blah"
+    }
+]

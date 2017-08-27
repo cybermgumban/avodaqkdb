@@ -14,7 +14,7 @@ ReactDOM.render (
     <Router history={appHistory} onUpdate={()=>window.scrollTo(0,0)}>
         <Route path="/" component={Choices} >
             <IndexRoute component={Disclaimer} />
-            <Route path="showall" component={ShowAll} />
+            <Route path="function/showall" component={ShowAll} />
             <Route path="function/search" component={Search} />
         </Route>
     </Router>,
