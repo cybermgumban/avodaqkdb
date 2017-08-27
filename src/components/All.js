@@ -1,7 +1,6 @@
 var React = require("react");
-var dbjabber = require("../db/dbjabber");
-var dbipphone = require("../db/dbipphone");
-var dbcucm = require("../db/dbcucm");
+
+var db = require("../db/db");
 
 class TitleDescription extends React.Component {
     render() {
@@ -29,7 +28,7 @@ class All extends React.Component {
     }
 
     handleBtnClick() {
-        var totalShows = dbjabber.length;
+        var totalShows = db.length;
         this.setState(function(prevState) {
             return {
                 showIndex: (prevState.showIndex + 1) % totalShows
@@ -39,23 +38,18 @@ class All extends React.Component {
 
     render() {
         var resultJabber = null;
-        var jabber = [];
- 
-        for (var i = 0 ; i<dbjabber.length; i++) {
-            jabber.push(<TitleDescription showDbJabberTitle={dbjabber[i].title} showDbJabberDescription={dbjabber[i].description} showDbJabberWorkaround={dbjabber[i].workaround}/>, <br />)
-        }
 
         if (this.props.result === "showall") {
             resultJabber = (
                 <div>
                     <h3>Jabber</h3>
-                    {jabber}
                 </div>
             )
         }
 
         return (
             <div>
+                {console.dir(db)}
             {resultJabber}
             </div>
         );

@@ -1,7 +1,6 @@
 var React = require("react");
-var Banner = require("./Banner");
+var Choices = require("./Banner");
 var All = require("./All");
-var Choices = require("./Choices");
 var Search = require("./Search");
 var Aed = require("./Aed");
 
@@ -39,7 +38,6 @@ class ShowAll extends React.Component {
     render() {
         return (
             <div>
-            <Banner /> <br />
             <Choices onBtnClick={this.handleBtnClick}/> <br />
             <All result={this.state.btnClicked}/>
             <Search result={this.state.btnClicked} />
