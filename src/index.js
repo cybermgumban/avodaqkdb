@@ -7,6 +7,7 @@ var Choices = require("./components/Banner");
 var ShowAll = require("./components/ShowAll");
 var Disclaimer = require("./components/Disclaimer");
 var Search = require("./components/Search");
+var ShowOne = require("./components/ShowOne");
 
 var appHistory = useRouterHistory(createHashHistory)({ queryKey:false})
 
@@ -16,6 +17,7 @@ ReactDOM.render (
             <IndexRoute component={Disclaimer} />
             <Route path="function/showall" component={ShowAll} />
             <Route path="function/search" component={Search} />
+            <Route path="function/showone/:title" component={ShowOne} />
         </Route>
     </Router>,
     document.getElementById("root")
