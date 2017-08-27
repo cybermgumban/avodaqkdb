@@ -11,7 +11,10 @@ class ShowAll extends React.Component {
                 <h2>Jabber</h2>
                 {dbjabber.map((dbjabber, index) => (
                     <li key={index}>
-                        <Link to={`/function/showone/${dbjabber.title}`} query={{description: dbjabber.description, workaround: dbjabber.workaround}} >
+                        <Link 
+                        to={`/function/showone/${dbjabber.title}`} 
+                        query={{description: dbjabber.description, 
+                                workaround: dbjabber.workaround}} >
                         {dbjabber.title}
                         </Link>
                     </li>
