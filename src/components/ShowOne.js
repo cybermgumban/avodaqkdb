@@ -1,5 +1,4 @@
 var React = require("react");
-var dbjabber = require("../db/dbjabber");
 
 class ShowOne extends React.Component {
     constructor(props){
