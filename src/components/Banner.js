@@ -1,4 +1,5 @@
 var React = require("react");
+var {Link} = require("react-router");
 
 //    backgroundImage: "url(" + TestBanner + ")",
 
@@ -16,8 +17,7 @@ var bannerStyle = {
 };
 
 var choicesStyle = {
-    backgroundColor: "#00004c",
-    color: "white",
+    borderStyle: "solid",
     marginRight: "-10px",
     marginLeft: "-10px",
     height: "32px",
@@ -25,17 +25,15 @@ var choicesStyle = {
     textAlign: "right",
 };
 
-var btnStyle = {
-    marginTop: "5px",
-    marginBottom: "10px",
-    marginRight: "10px"
+var anchorStyle = {
+    float: "left",
+    marginTop:"8px",
+    marginLeft:"10px"
 };
-
 
 class Choices extends React.Component {
     constructor(props) {
         super(props);
-        this.props.onBtnClick = this.props.onBtnClick.bind(this);
     }
 
     render() {
@@ -48,41 +46,37 @@ class Choices extends React.Component {
                     style={{height:"90px", widht:"80px"}}
                     alt="avodaq-icon" />
                 </span>
-            <h2 style={{paddingTop:"20px"}}>Avodaq Pte Ltd Knowledge Database</h2>
+            <h2 style={{paddingTop:"20px"}}>avodaq Pte Ltd Knowledge Database</h2>
             </div> 
                 <br />
             <div style={choicesStyle}>
-                <button 
-                    style={btnStyle}
-                    value = "showall"
-                    onClick={this.props.onBtnClick}>
-                    Show All
-                </button>
-                <button 
-                    style={btnStyle} 
-                    value="search"
-                    onClick={this.props.onBtnClick}>
-                    Search
-                </button>
-                <button 
-                    style={btnStyle} 
-                    value="add"
-                    onClick={this.props.onBtnClick}>
-                    Add
-                </button>
-                <button 
-                    style={btnStyle} 
-                    value="edit"
-                    onClick={this.props.onBtnClick}>
-                    Edit
-                </button>
-                <button 
-                    style={btnStyle} 
-                    value="delete"
-                    onClick={this.props.onBtnClick}>
-                    Delete
-                </button>
+                <a style={anchorStyle}>
+                    <Link to="/showall">
+                        Show All
+                    </Link>
+                </a>
+                <a style={anchorStyle}>
+                    <Link to="/function/search">
+                        Search
+                    </Link>
+                </a>
+                <a style={anchorStyle}>
+                    <Link to="/function/add">
+                        Add
+                    </Link>
+                </a>
+                <a style={anchorStyle}>
+                    <Link to="/function/edit">
+                        Edit
+                    </Link>
+                </a>
+                <a style={anchorStyle}>
+                    <Link to="/function/delete">
+                        Delete
+                    </Link>
+                </a>
             </div>
+                {this.props.children}
             </div>
         );
     }
