@@ -13,8 +13,8 @@ class ShowOne extends React.Component {
         return (
             <div>
                 <p>Title: {this.props.params.title}</p>
-                <p>Description: {this.props.location.query.description}</p>
-                <p>Workaround: {this.props.location.query.workaround}</p>
+                <p>Description: {this.props.location.state.description}</p>
+                <p>Workaround: {this.props.location.state.workaround}</p>
             </div>
         );
     }

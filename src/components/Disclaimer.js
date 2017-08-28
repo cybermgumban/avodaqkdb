@@ -9,7 +9,6 @@ class Disclaimer extends React.Component {
             </h2>
             <p style={{marginTop:"120px"}}>Developed by: Marlon Gumban</p>
             </div>
-
         );
     }
 }

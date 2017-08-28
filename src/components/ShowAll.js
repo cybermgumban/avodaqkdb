@@ -12,16 +12,23 @@ class ShowAll extends React.Component {
                 {dbjabber.map((dbjabber, index) => (
                     <li key={index}>
                         <Link 
-                        to={`/function/showone/${dbjabber.title}`} 
-                        query={{description: dbjabber.description, 
-                                workaround: dbjabber.workaround}} >
+                        to={{ pathname: `/function/showone/${dbjabber.title}`, 
+                        state: {description: dbjabber.description, 
+                                workaround: dbjabber.workaround} }} >
                         {dbjabber.title}
                         </Link>
                     </li>
                 ))}
                 <h2>CUCM</h2>
                 {dbcucm.map((dbcucm, index) => (
-                    <li key={index}>{dbcucm.title} </li>
+                    <li key={index}>
+                        <Link 
+                        to={{ pathname: `/function/showone/${dbcucm.title}`,
+                        state: {description: dbcucm.description,
+                                workaround: dbcucm.workaround} }}>
+                        {dbcucm.title}
+                        </Link>
+                    </li>
                 ))}
             </div>
         );
