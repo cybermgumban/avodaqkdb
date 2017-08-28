@@ -1,6 +1,6 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var {Router, Route, indexRoute, browserHistory} = require("react-router");
+var {Router, Route, IndexRoute, browserHistory} = require("react-router");
 //var {createHashHistory} = require("history");
 
 var Choices = require("./components/Banner");
@@ -15,7 +15,7 @@ var Aed = require("./components/Aed");
 ReactDOM.render (
     <Router history={browserHistory} onUpdate={()=>window.scrollTo(0,0)}>
         <Route path="/" component={Choices} >
-            <indexRoute component={Disclaimer} />
+            <IndexRoute component={Disclaimer} />
             <Route path="function/showall" component={ShowAll} />
             <Route path="function/search" component={Search} />
             <Route path="function/showone/:title" component={ShowOne} />
