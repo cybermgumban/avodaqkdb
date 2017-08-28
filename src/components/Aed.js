@@ -5,7 +5,7 @@ var React = require("react");
 class Aed extends React.Component {
     render() {
         return (
-            <h1>This function is is still under development...</h1>
+            <h1>This function is under development... :)</h1>
         );   
     }
 }

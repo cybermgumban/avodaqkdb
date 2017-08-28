@@ -50,7 +50,7 @@ class Search extends React.Component {
                     </label>
                         <br /> <br />
                     <label>
-                    <input type="submit" value="Submit" onClick={this.handleSubmit}/>
+                    <input type="submit" value="Search" onClick={this.handleSubmit}/>
                     </label>
                 </form>
             </div>

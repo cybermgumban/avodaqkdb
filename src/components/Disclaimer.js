@@ -1,6 +1,11 @@
 var React = require("react");
 
 class Disclaimer extends React.Component {
+
+    componentDidMount() {
+        document.title="avodaq KDB"
+    }
+
     render() {
         return (
             <div style={{textAlign:"center", marginTop:"100px"}}>
