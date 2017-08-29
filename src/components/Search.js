@@ -1,4 +1,5 @@
 var React = require("react");
+var {Link} = require("react-router");
 
 var dbjabber = require("../db/dbjabber");
 
@@ -34,14 +35,17 @@ class Search extends React.Component {
         });
     }
 
-    handleSubmit(event) {
+    handleSubmit() {
             if(this.state.type==="Jabber") {
-                alert(event.target.value);
                 var searchResult = [];
                 searchResult = (
-                    <h2>Search Result:</h2>,
-                    dbjabber.map((jabber, index) => (
-                        <p key={index}>{dbjabber.title}</p>
+                    dbjabber.map((dbjabber, index) => ((dbjabber.title.match(this.state.keyword)? console.log("a") : console.log("b")),
+                        <li key={index}>
+                            <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
+                            state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
+                            {dbjabber.title}
+                            </Link>
+                        </li>
                     )))
                 this.setState ({
                     searchResult: searchResult
@@ -72,14 +76,13 @@ class Search extends React.Component {
                             name="keyword" 
                             onChange={this.handleChange}/>
                     </label>
-                        <br /> <br />
-                    <label>
-                    <input type="submit" value="Search" onClick={this.handleSubmit}/>
-                    </label>
+                    <br /> <br />
                 </form>
-                    <br/>
+                    <button onClick={this.handleSubmit}>Search</button>
+                    <br/> <br />
                 <div style={searchStyle}>
                 </div>
+                    <h2>Search Result:</h2>
                     {this.state.searchResult}
             </div>
         );
