@@ -5,7 +5,7 @@
         "workaround": "restart jabber application"
     },
     {
-        "title": "Registration Error",
+        "title": "Registration Error login",
         "description": "cannot use phone, showing registration error",
         "workaround": "restart IP Phone"
     },

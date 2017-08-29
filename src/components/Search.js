@@ -39,14 +39,14 @@ class Search extends React.Component {
             if(this.state.type==="Jabber") {
                 var searchResult = [];
                 searchResult = (
-                    dbjabber.map((dbjabber, index) => ((dbjabber.title.match(this.state.keyword)? console.log("a") : console.log("b")),
-                        <li key={index}>
+                    dbjabber.map((dbjabber, index) => ((dbjabber.title.match(this.state.keyword)? 
+                        (<li key={index}>
                             <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
                             state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
                             {dbjabber.title}
                             </Link>
-                        </li>
-                    )))
+                        </li>) : console.log("b"))
+                )))
                 this.setState ({
                     searchResult: searchResult
                 })
