@@ -45,11 +45,42 @@ class Search extends React.Component {
                             state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
                             {dbjabber.title}
                             </Link>
-                        </li>) : console.log("b"))
-                )))
-                this.setState ({
+                        </li>) : 
+
+                            (dbjabber.description.match(this.state.keyword)?
+                                (<li key={index}>
+                                    <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
+                                    state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
+                                    {dbjabber.title}
+                                    </Link>
+                                </li>) : 
+
+                                (dbjabber.workaround.match(this.state.keyword)?
+                                    (<li key={index}>
+                                        <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
+                                        state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
+                                        {dbjabber.title}
+                                        </Link>
+                                    </li>) : null
+                                )
+                            )
+                    )))
+                )
+
+                function allIsNull(element, index, array) {
+                    return element === null;
+                }
+
+                if (searchResult.every(allIsNull) === true) {
+                    this.setState ({
+                    searchResult: <h3>We did not find any results... Please try again using another keyword.</h3>
+                    })
+                } else {
+                    this.setState ({
                     searchResult: searchResult
-                })
+                    })
+                }
+
             }
         }
 
@@ -58,7 +89,6 @@ class Search extends React.Component {
             console.log(this.state.keyword);
         return (
             <div>
-                <form>
                     <label>Type: 
                     <select 
                         value={this.state.type} 
@@ -77,7 +107,6 @@ class Search extends React.Component {
                             onChange={this.handleChange}/>
                     </label>
                     <br /> <br />
-                </form>
                     <button onClick={this.handleSubmit}>Search</button>
                     <br/> <br />
                 <div style={searchStyle}>
