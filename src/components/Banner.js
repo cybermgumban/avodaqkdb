@@ -3,9 +3,15 @@ var {Link} = require("react-router");
 
 //    backgroundImage: "url(" + TestBanner + ")",
 
+//show all icon - http://icons.iconarchive.com/icons/icons8/windows-8/512/Programming-Show-Property-icon.png
+//seach icon - http://icons.iconarchive.com/icons/rafiqul-hassan/blogger/512/Search-icon.png
+//add icon - http://icons.iconarchive.com/icons/iconsmind/outline/512/Add-icon.png
+//edit icon - http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png
+//delete icon - https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png
+
 var bannerStyle = {
     backgroundColor: "#00004c",
-    marginTop: "-20px",
+    marginTop: "-25px",
     marginRight: "-10px",
     marginBottom: "0px",
     marginLeft: "-10px",
@@ -20,9 +26,10 @@ var choicesStyle = {
     borderStyle: "solid",
     marginRight: "-10px",
     marginLeft: "-10px",
-    height: "32px",
+    height: "95px",
     width: "auto",
     textAlign: "right",
+    margin: "0 auto"
 };
 
 var anchorStyle = {
@@ -46,31 +53,56 @@ class Choices extends React.Component {
             </div> 
                 <br />
             <div style={choicesStyle}>
+                <div style={{verticalAlign:"top", marginLeft:"50px"}}>
                 <p style={anchorStyle}>
                     <Link to="/function/showall">
-                        Show All
+                        <img 
+                        style={{height:"50px", width:"50px"}}
+                        src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Programming-Show-Property-icon.png" alt="show all icon"/>
+                        <span style={{display:"block"}}>Show All</span>
                     </Link>
                 </p>
+                </div>
+                <div style={{verticalAlign:"top", marginLeft:"150px"}}>
                 <p style={anchorStyle}>
                     <Link to="/function/search">
-                        Search
+                        <img 
+                        style={{height:"50px", width:"50px"}}
+                        src="http://icons.iconarchive.com/icons/rafiqul-hassan/blogger/512/Search-icon.png" alt="search icon"/>
+                        <span style={{display:"block"}}>Search</span>
                     </Link>
                 </p>
+                </div>
+                <div style={{verticalAlign:"top", marginLeft:"250px"}}>
                 <p style={anchorStyle}>
                     <Link to="/function/add">
-                        Add
+                        <img 
+                        style={{height:"50px", width:"50px"}}
+                        src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Add-icon.png" alt="add icon"/>
+                        <span style={{display:"block"}}>Add</span>
                     </Link>
                 </p>
+                </div>
+                <div style={{verticalAlign:"top", marginLeft:"350px"}}>
                 <p style={anchorStyle}>
                     <Link to="/function/edit">
-                        Edit
+                        <img 
+                        style={{height:"50px", width:"50px"}}
+                        src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png" alt="edit icon"/>
+                        <span style={{display:"block"}}>Edit</span>
                     </Link>
                 </p>
+                </div>
+                <div style={{verticalAlign:"top", marginLeft:"450px"}}>
                 <p style={anchorStyle}>
                     <Link to="/function/delete">
-                        Delete
+                        <img 
+                        style={{height:"50px", width:"50px"}}
+                        src="https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png" alt="delete icon"/>
+                        <span style={{display:"block"}}>Delete</span>
                     </Link>
                 </p>
+                </div>
             </div> <br />
                 {this.props.children}
             </div>
