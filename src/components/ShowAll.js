@@ -23,7 +23,7 @@ class ShowAll extends React.Component {
                         </Link>
                     </li>
                 ))}
-                <h2>CUCM</h2>
+                <h2>Cisco Unified Communications Manager</h2>
                 {dbcucm.map((dbcucm, index) => (
                     <li style={li} key={index}>
                         <Link 

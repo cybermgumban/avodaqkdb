@@ -2,7 +2,7 @@
     {
         "title": "Cannot login on jabber on windows",
         "description": "unable to login on jabber, getting error",
-        "workaround": "restart jabber application"
+        "workaround": ["restart jabber application","restart phone", "restart all" ]
     },
     {
         "title": "Registration Error login",
