@@ -2,6 +2,8 @@ var React = require("react");
 var {Link} = require("react-router");
 
 var dbjabber = require("../db/dbjabber");
+var dbcucm = require("../db/dbcucm");
+
 
 var searchStyle = {
     marginRight: "-10px",
@@ -9,7 +11,11 @@ var searchStyle = {
     height: "5px",
     width: "auto",
     textAlign: "right",
-};
+}
+
+var li = {
+    textIndent: "40px"
+}
 
 class Search extends React.Component {
     constructor(props){
@@ -37,27 +43,27 @@ class Search extends React.Component {
             if(this.state.type==="Jabber") {
                 var searchResult = [];
                 searchResult = (
-                    dbjabber.map((dbjabber, index) => ((dbjabber.title.match(this.state.keyword)? 
-                        (<li key={index}>
-                            <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
-                            state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
-                            {dbjabber.title}
+                    dbjabber.map((db, index) => ((db.title.match(this.state.keyword)? 
+                        (<li  style={li} key={index}>
+                            <Link to={{ pathname: `function/showone/${db.title}`, 
+                            state:{ description: db.description, workaround: db.workaround } }}>
+                            {db.title}
                             </Link>
                         </li>) : 
 
-                            (dbjabber.description.match(this.state.keyword)?
-                                (<li key={index}>
-                                    <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
-                                    state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
-                                    {dbjabber.title}
+                            (db.description.match(this.state.keyword)?
+                                (<li  style={li} key={index}>
+                                    <Link to={{ pathname: `function/showone/${db.title}`, 
+                                    state:{ description: db.description, workaround: db.workaround } }}>
+                                    {db.title}
                                     </Link>
                                 </li>) : 
 
-                                (dbjabber.workaround.match(this.state.keyword)?
-                                    (<li key={index}>
-                                        <Link to={{ pathname: `function/showone/${dbjabber.title}`, 
-                                        state:{ description: dbjabber.description, workaround: dbjabber.workaround } }}>
-                                        {dbjabber.title}
+                                (db.workaround.match(this.state.keyword)?
+                                    (<li  style={li} key={index}>
+                                        <Link to={{ pathname: `function/showone/${db.title}`, 
+                                        state:{ description: db.description, workaround: db.workaround } }}>
+                                        {db.title}
                                         </Link>
                                     </li>) : null
                                 )
@@ -80,6 +86,53 @@ class Search extends React.Component {
                 }
 
             }
+
+            else if(this.state.type==="CUCM") {
+                searchResult = (
+                    dbcucm.map((db, index) => ((db.title.match(this.state.keyword)? 
+                        (<li style={li} key={index}>
+                            <Link to={{ pathname: `function/showone/${db.title}`, 
+                            state:{ description: db.description, workaround: db.workaround } }}>
+                            {db.title}
+                            </Link>
+                        </li>) : 
+
+                            (db.description.match(this.state.keyword)?
+                                (<li style={li} key={index}>
+                                    <Link to={{ pathname: `function/showone/${db.title}`, 
+                                    state:{ description: db.description, workaround: db.workaround } }}>
+                                    {db.title}
+                                    </Link>
+                                </li>) : 
+
+                                (db.workaround.match(this.state.keyword)?
+                                    (<li style={li} key={index}>
+                                        <Link to={{ pathname: `function/showone/${db.title}`, 
+                                        state:{ description: db.description, workaround: db.workaround } }}>
+                                        {db.title}
+                                        </Link>
+                                    </li>) : null
+                                )
+                            )
+                    )))
+                )
+
+                function allIsNull(element, index, array) {
+                    return element === null;
+                }
+
+                if (searchResult.every(allIsNull) === true) {
+                    this.setState ({
+                    searchResult: <h3>We did not find any results... Please try again using another keyword.</h3>
+                    })
+                } else {
+                    this.setState ({
+                    searchResult: searchResult
+                    })
+                }
+
+            }
+
         }
 
     render() {

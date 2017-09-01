@@ -11,16 +11,17 @@ var {Link} = require("react-router");
 
 var bannerStyle = {
     backgroundColor: "#00004c",
-    verticalAlign: "center",
-    textAlign: "center",
     height: "80px",
     width: "100%",
     position: "fixed",
     fontSize: "20px",
     color: "white",
-    marginTop: "-25px",
+    marginTop: "-10px",
     marginRight: "-10px",
     marginLeft: "-10px",
+    display: "inline-block",
+    textAlign: "center",
+    verticalAlign: "center"
 };
 
 var choicesStyle = {
@@ -40,7 +41,7 @@ class Choices extends React.Component {
             <span style={{float:"left"}}>
                 <img 
                     src="https://s3-media3.fl.yelpcdn.com/bphoto/yhZoBIKYqfNuj70AdfTT7A/o.jpg"                    
-                    style={{height:"90px", widht:"80px", marginTop:"15px"}}
+                    style={{height:"90px", widht:"80px", marginTop:"0px"}}
                     alt="avodaq-icon" />
                 </span>
             <h2>avodaq Pte Ltd Knowledge Database</h2>
