@@ -94,7 +94,7 @@ class Choices extends React.Component {
                     </Link>
                 </div>
             </div>
-            <div style={{marginLeft:"120px"}}>
+            <div style={{marginLeft:"120px", marginRight:"40px"}}>
                 {this.props.children}
             </div>
             </div>
