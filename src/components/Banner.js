@@ -11,15 +11,15 @@ var {Link} = require("react-router");
 
 var bannerStyle = {
     backgroundColor: "#00004c",
-    marginTop: "-25px",
-    marginRight: "-10px",
-    marginBottom: "0px",
-    marginLeft: "-10px",
+    verticalAlign: "center",
     textAlign: "center",
     height: "80px",
     width: "auto",
     fontSize: "20px",
-    color: "white"
+    color: "white",
+    marginTop: "-25px",
+    marginRight: "-10px",
+    marginLeft: "-10px"
 };
 
 var choicesStyle = {
@@ -28,14 +28,7 @@ var choicesStyle = {
     marginLeft: "-10px",
     height: "95px",
     width: "auto",
-    textAlign: "right",
-    margin: "0 auto"
-};
-
-var anchorStyle = {
-    float: "left",
-    marginTop:"8px",
-    marginLeft:"10px"
+    textAlign: "center",
 };
 
 class Choices extends React.Component {
@@ -52,56 +45,47 @@ class Choices extends React.Component {
             <h2 style={{paddingTop:"20px"}}>avodaq Pte Ltd Knowledge Database</h2>
             </div> 
                 <br />
+                
             <div style={choicesStyle}>
-                <div style={{verticalAlign:"top", marginLeft:"50px"}}>
-                <p style={anchorStyle}>
+                <div style={{verticalAlign:"middle", marginLeft:"50px"}}>
                     <Link to="/function/showall">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="http://icons.iconarchive.com/icons/icons8/windows-8/512/Programming-Show-Property-icon.png" alt="show all icon"/>
                         <span style={{display:"block"}}>Show All</span>
                     </Link>
-                </p>
                 </div>
-                <div style={{verticalAlign:"top", marginLeft:"150px"}}>
-                <p style={anchorStyle}>
+                <div style={{verticalAlign:"middle", marginLeft:"150px"}}>
                     <Link to="/function/search">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="http://icons.iconarchive.com/icons/rafiqul-hassan/blogger/512/Search-icon.png" alt="search icon"/>
                         <span style={{display:"block"}}>Search</span>
                     </Link>
-                </p>
                 </div>
-                <div style={{verticalAlign:"top", marginLeft:"250px"}}>
-                <p style={anchorStyle}>
+                <div style={{verticalAlign:"middle", marginLeft:"250px"}}>
                     <Link to="/function/add">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Add-icon.png" alt="add icon"/>
                         <span style={{display:"block"}}>Add</span>
                     </Link>
-                </p>
                 </div>
-                <div style={{verticalAlign:"top", marginLeft:"350px"}}>
-                <p style={anchorStyle}>
+                <div style={{verticalAlign:"middle", marginLeft:"350px"}}>
                     <Link to="/function/edit">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png" alt="edit icon"/>
                         <span style={{display:"block"}}>Edit</span>
                     </Link>
-                </p>
                 </div>
-                <div style={{verticalAlign:"top", marginLeft:"450px"}}>
-                <p style={anchorStyle}>
+                <div style={{verticalAlign:"middle", marginLeft:"450px"}}>
                     <Link to="/function/delete">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png" alt="delete icon"/>
                         <span style={{display:"block"}}>Delete</span>
                     </Link>
-                </p>
                 </div>
             </div> <br />
                 {this.props.children}
