@@ -4,8 +4,6 @@ var {Link} = require("react-router");
 var dbjabber = require("../db/dbjabber");
 
 var searchStyle = {
-    borderStyle: "dashed",
-    borderColor: "#bfbfbf",
     marginRight: "-10px",
     marginLeft: "-10px",
     height: "5px",

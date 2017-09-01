@@ -14,21 +14,22 @@ var bannerStyle = {
     verticalAlign: "center",
     textAlign: "center",
     height: "80px",
-    width: "auto",
+    width: "100%",
+    position: "fixed",
     fontSize: "20px",
     color: "white",
     marginTop: "-25px",
     marginRight: "-10px",
-    marginLeft: "-10px"
+    marginLeft: "-10px",
 };
 
 var choicesStyle = {
-    borderStyle: "solid",
-    marginRight: "-10px",
-    marginLeft: "-10px",
-    height: "95px",
-    width: "auto",
     textAlign: "center",
+    float: "left",
+    borderRight: "solid",
+    width: "80px",
+    height: "100%",
+    position: "fixed"
 };
 
 class Choices extends React.Component {
@@ -39,15 +40,15 @@ class Choices extends React.Component {
             <span style={{float:"left"}}>
                 <img 
                     src="https://s3-media3.fl.yelpcdn.com/bphoto/yhZoBIKYqfNuj70AdfTT7A/o.jpg"                    
-                    style={{height:"90px", widht:"80px"}}
+                    style={{height:"90px", widht:"80px", marginTop:"15px"}}
                     alt="avodaq-icon" />
                 </span>
-            <h2 style={{paddingTop:"20px"}}>avodaq Pte Ltd Knowledge Database</h2>
-            </div> 
-                <br />
-                
+            <h2>avodaq Pte Ltd Knowledge Database</h2>
+            </div>
+                <br /> <br />
+            <div style={{marginTop: "50px"}}>
             <div style={choicesStyle}>
-                <div style={{verticalAlign:"middle", marginLeft:"50px"}}>
+                <div>
                     <Link to="/function/showall">
                         <img 
                         style={{height:"50px", width:"50px"}}
@@ -55,7 +56,8 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Show All</span>
                     </Link>
                 </div>
-                <div style={{verticalAlign:"middle", marginLeft:"150px"}}>
+                    <br />
+                <div>
                     <Link to="/function/search">
                         <img 
                         style={{height:"50px", width:"50px"}}
@@ -63,7 +65,8 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Search</span>
                     </Link>
                 </div>
-                <div style={{verticalAlign:"middle", marginLeft:"250px"}}>
+                    <br />
+                <div>
                     <Link to="/function/add">
                         <img 
                         style={{height:"50px", width:"50px"}}
@@ -71,7 +74,8 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Add</span>
                     </Link>
                 </div>
-                <div style={{verticalAlign:"middle", marginLeft:"350px"}}>
+                    <br />
+                <div>
                     <Link to="/function/edit">
                         <img 
                         style={{height:"50px", width:"50px"}}
@@ -79,7 +83,8 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Edit</span>
                     </Link>
                 </div>
-                <div style={{verticalAlign:"middle", marginLeft:"450px"}}>
+                    <br />
+                <div>
                     <Link to="/function/delete">
                         <img 
                         style={{height:"50px", width:"50px"}}
@@ -87,8 +92,11 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Delete</span>
                     </Link>
                 </div>
-            </div> <br />
+            </div>
+            <div style={{marginLeft:"120px"}}>
                 {this.props.children}
+            </div>
+            </div>
             </div>
         );
     }
