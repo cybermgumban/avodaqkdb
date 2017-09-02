@@ -40,18 +40,22 @@ class Search extends React.Component {
     }
 
 
-    searchWA(db, index, keyword) {
-        console.log(keyword)
+    searchWA(db, index, keyword, title, description) {
+        var workaround = [];
         for(var i=0; i<db.length; i++) {
+            workaround.push(
                                     (db[i].match(keyword)?
                                     (<li  style={li} key={index}>
-                                        <Link to={{ pathname: `function/showone/${db.title}`, 
-                                        state:{ description: db.description, workaround: db.workaround } }}>
-                                        {db.title}
+                                        <Link to={{ pathname: `function/showone/${title}`, 
+                                        state:{ description: description, workaround: db } }}>
+                                        {title}
                                         </Link>
-                                    </li>) : console.log("1234567")
-                                )
+                                    </li>) : null
+                                    )
+            )
+            return workaround;
         }
+        
     }
 
     handleSubmit() {
@@ -73,13 +77,15 @@ class Search extends React.Component {
                                     {db.title}
                                     </Link>
                                 </li>) : 
-                                    this.searchWA(db.workaround, index, this.state.keyword)
+                                    this.searchWA(db.workaround, index, this.state.keyword, db.title, db.description)
                             )
                     )))
                 )
 
                 function allIsNull(element, index, array) {
-                    return element === null;
+                    for(var i=0;i<array.length;i++){
+                    return element[i] === null;
+                    }
                 }
 
                 if (searchResult.every(allIsNull) === true) {
@@ -111,21 +117,17 @@ class Search extends React.Component {
                                     {db.title}
                                     </Link>
                                 </li>) : 
-
-                                (db.workaround.match(this.state.keyword)?
-                                    (<li style={li} key={index}>
-                                        <Link to={{ pathname: `function/showone/${db.title}`, 
-                                        state:{ description: db.description, workaround: db.workaround } }}>
-                                        {db.title}
-                                        </Link>
-                                    </li>) : null
+                                    this.searchWA(db.workaround, index, this.state.keyword, db.title, db.description)
                                 )
                             )
-                    )))
+                    ))
+                    
                 )
 
                 function allIsNull(element, index, array) {
-                    return element === null;
+                    for(var i=0;i<array.length;i++){
+                    return element[i] === null;
+                    }
                 }
 
                 if (searchResult.every(allIsNull) === true) {
@@ -139,14 +141,11 @@ class Search extends React.Component {
                 }
 
             }
-
-        }
+    }
 
 
 
     render() {
-            console.log(this.state.type);
-            console.log(this.state.keyword);
         return (
             <div>
                     <label>Type:

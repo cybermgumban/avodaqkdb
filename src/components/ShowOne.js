@@ -13,10 +13,9 @@ class ShowOne extends React.Component {
     }
 
     render() {
-        console.log(this.state.title)
         return (
             <div>
-                <p>Title: {this.props.params.title}</p>
+                <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
                 <p>Description: {this.props.location.state.description}</p>
                 <p>Workaround: {
                     this.props.location.state.workaround.map((db, index) => (
