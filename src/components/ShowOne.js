@@ -16,8 +16,8 @@ class ShowOne extends React.Component {
         return (
             <div>
                 <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
-                <p>Description: {this.props.location.state.description}</p>
-                <p>Workaround: {
+                <p><b>Description:</b> {this.props.location.state.description}</p>
+                <p><b>Workaround:</b> {
                     this.props.location.state.workaround.map((db, index) => (
                         <li style={li} key={index}>
                             {db}

@@ -1,167 +1,52 @@
 [
     {
-        "title": "ba",
-        "description": "be",
-        "workaround": [  "bi" ]
+        "title": [  "Cisco Unified Communications Manager System Stops Responding" ],
+        "description": "The Cisco Unified Communications Manager system does not respond.",
+        "workaround": [  "Depending on what type of interruption you experience, you will need to gather different data that will help determine the root cause of the interruption.", "Use the following procedure if a lack of resources interruption occurs.", "Collect Cisco CallManager traces 15 minutes before and after the interruption.", "Collect SDL traces 15 minutes before and after the interruption.", "Collect perfmon traces if available.", "If the traces are not available, start collecting the perfmon traces and track memory and CPU usage for each process that is running on the server. These will help in the event of another lack of resources interruption." ]
     },
     {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
+        "title": "Cisco Unified Communications Manager Administration Does Not Display",
+        "description": "Cisco Unified Communications Manager Administration does not display.",
+        "workaround": [  "Verify that the Cisco CallManager service is active and running on the server. See related topics or the Cisco Unified Serviceability Administration Guide." ]
     },
     {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
+        "title": "Error When Attempting to Access Cisco Unified Communications Manager Administration",
+        "description": "An error message displays when you are trying to access Cisco Unified Communications Manager Administration.",
+        "workaround": [  "Try starting the other services." ]
     },
     {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
+        "title": "Error When Attempting to Access Cisco Unified Communications Manager Administration on a Subsequent Node",
+        "description": "An error message displays when you are trying to access the Cisco Unified Communications Manager Administration.",
+        "workaround": [  "If this occurs, follow the procedure for changing the IP address on a subsequent Cisco Unified Communications Manager node in the document, Changing the IP Address and Host Name for Cisco Unified Communications Manager." ]
     },
     {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
+        "title": "You Are Not Authorized to View",
+        "description": "When you access Cisco Unified Communications Manager Administration, one of the following messages displays.",
+        "workaround": [  "Contact TAC for further assistance." ]
     },
     {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
+        "title": "Problems Displaying or Adding Users with Cisco Unified Communications Manager",
+        "description": "You cannot add a user or conduct a search in Cisco Unified Communications Manager Administration.",
+        "workaround": [  "You may not be able to add a user or do a search on Cisco Unified Communications Manager Administration, if your Cisco Unified Communications Manager hostname contains any special characters such as underscore or period (for example, Call_Manager). Domain Name System (DNS)-supported characters include all letters (A-Z, a-z), numbers (0-9), and hyphen (-); any special characters are not allowed. If the Q313675 patch is installed on your browser, make sure that the URL does not contain any non-DNS supported characters.", "To resolve this problem, you have the following options:", "Access Cisco Unified Communications Manager Administration by using the IP address of the server.", "Do not use non-DNS characters in the Server Name.", "Use the localhost or IP address in the URL." ]
     },
     {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
+        "title": "Name to Address Resolution Failing",
+        "description": "One of the following messages displays when you try to access the following URL:",
+        "workaround": [  "If you have configured the use of DNS, check in the DNS to see whether the entry for the your-cm-server-name has the correct IP address of the Cisco Unified Communications Manager server. If it is not correct, change it.", "If you are not using DNS, your local machine will check in the file to see whether an entry exists for the your-cm-server-name and an IP address that is associated to it. Open the file and add the Cisco Unified Communications Manager server name and the IP address. You can find the" ]
     },
     {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
+        "title": "Port 80 Blocked Between Your Browser and the Cisco Unified Communications Manager Server",
+        "description": "One of the following messages displays when a firewall blocks the port that is used by the web server or the http traffic:",
+        "workaround": [  "Verify whether other types of traffic to the Cisco Unified Communications Manager server, such as ping or Telnet, are allowed. If any are successful, it will show that http access to the Cisco Unified Communications Manager web server has been blocked from your remote network.", "Check the security policies with your network administrator.", "Try again from the same network where the server is located." ]
     },
     {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
+        "title": "Improper Network Setting Exists in the Remote Machine",
+        "description": "No connectivity exists, or no connectivity exists to other devices in the same network as the Cisco Unified Communications Manager.",
+        "workaround": [  "Try pinging the IP address of the Cisco Unified Communications Manager server and other devices to confirm that you cannot connect.", "If the connectivity to any other device out of your local network is failing, check the network setting on your station, as well as the cable and connector integrity. Refer to the appropriate hardware documentation for detailed information. If you are using TCP-IP over a LAN to connect, continue with the following steps to verify the network settings on the remote station.", "Choose Start > Setting > Network and Dial-up connections.", "Choose Local Area Connection, then Properties. The list of communication protocols displays as checked.", "Choose Internet Protocol (TCP-IP) and click Properties again.", "Depending on your network, choose either Obtain an ip address automatically or set manually your address, mask and default Gateway. The possibility exists that a browser-specific setting could be improperly configured.", "Choose the Internet Explorer browser Tools > Internet Options.", "Choose the Connections tab and then verify the LAN settings or the dial-up settings. By default, the LAN settings and the dial-up settings do not get configured. The generic network setting from Windows gets used.", "If the connectivity is failing only to the Cisco Unified Communications Manager network, a routing issue probably exists in the network. Contact the network administrator to verify the routing that is configured in your default gateway." ]
     },
     {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
-    },
-    {
-        "title": "ca",
-        "description": "ce",
-        "workaround": [  "ci" ]
-    },
-    {
-        "title": "da",
-        "description": "de",
-        "workaround": [  "di" ]
+        "title": "Database Replication Does Not Occur When Connectivity Is Restored on Lost Node",
+        "description": "Database replication does not occur when connectivity is restored on lost node recovery. See the related topics for methods to verify the state of replication if replication fails. Only use the following procedure if you have already tried to reset replication on the node, and have been unsuccessful.",
+        "workaround": [  "Run utils dbreplication stop on the affected subscribers. You can run them all at once.", "Wait until step 1 completes, then run utils dbreplication stop on the affected publisher server.", "Run utils dbreplication clusterreset from the affected publisher server. When you run the command, the log name gets listed in the log file. Watch this file to monitor the process status. The path to the follows: /var/log/active/cm/trace/dbl/sdi", "From the affected publisher, run utils dbreplication reset all.", "Stop and restart all the services on all the subscriber servers [or restart/reboot all the systems (subscriber servers)] in the cluster to get the service changes. Do this only after utils dbreplication status shows Status 2." ]
     }
 ]

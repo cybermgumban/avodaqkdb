@@ -1,16 +1,41 @@
 [
     {
-        "title": "Cannot login on jabber on windows",
-        "description": "unable to login on jabber, getting error",
-        "workaround": [ "restart jabber application", "restart jabber application", "restart jabber application" ]
+        "title": "Configuration File Does Not Download",
+        "description": "Cisco Jabber for Windows does not download the configuration file from the TFTP server. The configuration file is not available in the installation directory after you start Cisco Jabber for Windows.",
+        "workaround": [ "Restart your TFTP server.", "Check the name of your configuration file. The name of the configuration file is case sensitive. The global configuration filename must be jabber-config.xml.", "Ensure your corporate firewall does not prevent Cisco Jabber for Windows from downloading the configuration file.", "Host the configuration file on your TFTP server" ]
     },
     {
-        "title": "Registration Error login",
-        "description": "cannot use phone, showing registration error",
-        "workaround": [ "restart IP Phone", "restart IP Phone", "restart IP Phone" ]
+        "title": "Cisco Jabber for Windows Does Not Read the Configuration File",
+        "description": "You host a global or group configuration file on your TFTP server. Cisco Jabber for Windows downloads the configuration file and saves it in the appropriate installation directory. However, Cisco Jabber for Windows does not apply any settings you specify in the configuration file.",
+        "workaround": [ "Ensure the XML in the configuration file is valid. Cisco Jabber for Windows configuration files must do the following:-", "Use utf-8 encoding.", "Contain only valid XML character entities. For example, use &amp; instead of &.Open your configuration file in Microsoft Internet Explorer to determine if any characters or entities are not valid. If Internet Explorerdisplays the entire XML structure, your configuration file does not contain invalid characters or entities. If Internet Explorer displays only part of the XML structure, your configuration file most likely contains invalid characters or entities.", "Contain a valid structure. Ensure parameters are nested under the correct elements. The following XML snippet shows the basic structure of a configuration file in an on-premises deployment:" ]
     },
     {
-        "title": "Adding User",
+        "title": "Cisco Jabber for Windows Uses Old Configuration Settings",
+        "description": "Cisco Jabber for Windows is not using the current configuration settings. You change settings in a configuration file and host it on your TFTP server. However, Cisco Jabber for Windows uses the settings from the previous version of the configuration file.",
+        "workaround": [ "Restart your TFTP server.", "Open the configuration file in your browser to verify the settings. Typically, you can access the configuration file at the following URL: http://tftp_server_address:6970/jabber-config.xml", "f restarting your TFTP server does not resolve this issue, it is likely that Cisco Jabber for Windows uses the cached configuration file because it cannot download the current version. See the troubleshooting steps to resolve the Configuration file does not download issue." ]
+    },
+    {
+        "title": "Group Chat Does Not Start",
+        "description": "You attempt to start a group chat. The group chat does not start and the following message is written to the log files",
+        "workaround": [ "Ensure at least one of the group chat participants is online. Cisco Jabber for Windows requires a minimum of one online participant to create a group chat.", "Activate and start the Multi User Chat Room service on Cisco Unified Presence.", "Activate and start the Text Conference Manager service on Cisco Unified Presence." ]
+    },
+    {
+        "title": "Jabber Windows cannot control phone device from client",
+        "description": "User can authenticate to Jabber Windows, and IM/Presence functions correctly, but the phone control does not. When going into Options > Phone Accounts, all you see is a spinning wheel.",
+        "workaround": [ "Jabber for Windows will authenticate with the CUPS server, then attempt to locate the authenticated users CCMCIP profile to download the list of associated devices that user is allowed to control. If this service is not activated, or if this user has no devices associated with them, than phone control will not work." ]
+    },
+    {
+        "title": "How to retrieve the chat history from Cisco Jabber for Windows",
+        "description": "",
+        "workaround": [ "blah blah blah", "bleh bleh bleh", "blih blih blih" ]
+    },
+    {
+        "title": "This is a sample 123",
+        "description": "How to add users in CUCM",
+        "workaround": [ "blah blah blah", "bleh bleh bleh", "blih blih blih" ]
+    },
+    {
+        "title": "This is not a sample 456",
         "description": "How to add users in CUCM",
         "workaround": [ "blah blah blah", "bleh bleh bleh", "blih blih blih" ]
     }
