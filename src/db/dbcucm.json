@@ -1,6 +1,6 @@
 [
     {
-        "title": [  "Cisco Unified Communications Manager System Stops Responding" ],
+        "title": "Cisco Unified Communications Manager System Stops Responding",
         "description": "The Cisco Unified Communications Manager system does not respond.",
         "workaround": [  "Depending on what type of interruption you experience, you will need to gather different data that will help determine the root cause of the interruption.", "Use the following procedure if a lack of resources interruption occurs.", "Collect Cisco CallManager traces 15 minutes before and after the interruption.", "Collect SDL traces 15 minutes before and after the interruption.", "Collect perfmon traces if available.", "If the traces are not available, start collecting the perfmon traces and track memory and CPU usage for each process that is running on the server. These will help in the event of another lack of resources interruption." ]
     },

@@ -49,6 +49,7 @@ class Choices extends React.Component {
                 <br /> <br />
             <div style={{marginTop: "50px"}}>
             <div style={choicesStyle}>
+                <br /> <br />
                 <div>
                     <Link to="/function/showall">
                         <img 
@@ -57,7 +58,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Show All</span>
                     </Link>
                 </div>
-                    <br />
+                    <br /> <br />
                 <div>
                     <Link to="/function/search">
                         <img 
@@ -66,7 +67,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Search</span>
                     </Link>
                 </div>
-                    <br />
+                    <br /> <br />
                 <div>
                     <Link to="/function/add">
                         <img 
@@ -75,7 +76,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Add</span>
                     </Link>
                 </div>
-                    <br />
+                    <br /> <br />
                 <div>
                     <Link to="/function/edit">
                         <img 
@@ -84,7 +85,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Edit</span>
                     </Link>
                 </div>
-                    <br />
+                    <br /> <br />
                 <div>
                     <Link to="/function/delete">
                         <img 

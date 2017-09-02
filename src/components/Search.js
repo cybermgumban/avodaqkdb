@@ -63,7 +63,7 @@ class Search extends React.Component {
                 var searchResult = [];
                 searchResult = (
                     dbjabber.map((db, index) => ((db.title.match(this.state.keyword)? 
-                        (<li  style={li} key={index}>
+                        (<li style={li} key={index}>
                             <Link to={{ pathname: `function/showone/${db.title}`, 
                             state:{ description: db.description, workaround: db.workaround } }}>
                             {db.title}
@@ -71,15 +71,17 @@ class Search extends React.Component {
                         </li>) : 
 
                             (db.description.match(this.state.keyword)?
-                                (<li  style={li} key={index}>
+                                (<li style={li} key={index}>
                                     <Link to={{ pathname: `function/showone/${db.title}`, 
                                     state:{ description: db.description, workaround: db.workaround } }}>
                                     {db.title}
                                     </Link>
                                 </li>) : 
                                     this.searchWA(db.workaround, index, this.state.keyword, db.title, db.description)
+                                )
                             )
-                    )))
+                    ))
+                    
                 )
 
                 function allIsNull(element, index, array) {
