@@ -1,5 +1,9 @@
 var React = require("react");
 
+var li = {
+    textIndent: "40px"
+}
+
 class ShowOne extends React.Component {
     constructor(props){
         super(props);
@@ -14,7 +18,12 @@ class ShowOne extends React.Component {
             <div>
                 <p>Title: {this.props.params.title}</p>
                 <p>Description: {this.props.location.state.description}</p>
-                <p>Workaround: {this.props.location.state.workaround}</p>
+                <p>Workaround: {
+                    this.props.location.state.workaround.map((db, index) => (
+                        <li style={li} key={index}>
+                            {db}
+                        </li>
+                    ))}</p>
             </div>
         );
     }

@@ -39,6 +39,21 @@ class Search extends React.Component {
         });
     }
 
+
+    searchWA(db, index, keyword) {
+        console.log(keyword)
+        for(var i=0; i<db.length; i++) {
+                                    (db[i].match(keyword)?
+                                    (<li  style={li} key={index}>
+                                        <Link to={{ pathname: `function/showone/${db.title}`, 
+                                        state:{ description: db.description, workaround: db.workaround } }}>
+                                        {db.title}
+                                        </Link>
+                                    </li>) : console.log("1234567")
+                                )
+        }
+    }
+
     handleSubmit() {
             if(this.state.type==="Jabber") {
                 var searchResult = [];
@@ -58,15 +73,7 @@ class Search extends React.Component {
                                     {db.title}
                                     </Link>
                                 </li>) : 
-
-                                (db.workaround.match(this.state.keyword)?
-                                    (<li  style={li} key={index}>
-                                        <Link to={{ pathname: `function/showone/${db.title}`, 
-                                        state:{ description: db.description, workaround: db.workaround } }}>
-                                        {db.title}
-                                        </Link>
-                                    </li>) : null
-                                )
+                                    this.searchWA(db.workaround, index, this.state.keyword)
                             )
                     )))
                 )
@@ -135,13 +142,16 @@ class Search extends React.Component {
 
         }
 
+
+
     render() {
             console.log(this.state.type);
             console.log(this.state.keyword);
         return (
             <div>
-                    <label>Type: 
-                    <select 
+                    <label>Type:
+                    <select
+                        style={{marginLeft: "40px", width: "160px", textAlignLast: "center"}} 
                         value={this.state.type} 
                         name="type" 
                         onChange={this.handleChange}>
@@ -152,6 +162,7 @@ class Search extends React.Component {
                         <br /> <br />
                     <label>Keyword: 
                         <input 
+                            style={{marginLeft: "13px", textAlign: "center"}} 
                             value={this.state.keyword}
                             type="text" 
                             name="keyword" 
