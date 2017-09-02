@@ -58,7 +58,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Show All</span>
                     </Link>
                 </div>
-                    <br /> <br />
+                    <br />
                 <div>
                     <Link to="/function/search">
                         <img 
@@ -67,7 +67,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Search</span>
                     </Link>
                 </div>
-                    <br /> <br />
+                    <br />
                 <div>
                     <Link to="/function/add">
                         <img 
@@ -76,7 +76,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Add</span>
                     </Link>
                 </div>
-                    <br /> <br />
+                    <br />
                 <div>
                     <Link to="/function/edit">
                         <img 
@@ -85,7 +85,7 @@ class Choices extends React.Component {
                         <span style={{display:"block"}}>Edit</span>
                     </Link>
                 </div>
-                    <br /> <br />
+                    <br />
                 <div>
                     <Link to="/function/delete">
                         <img 
