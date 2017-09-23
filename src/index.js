@@ -12,6 +12,16 @@ var Aed = require("./components/Aed");
 
 //var appHistory = useRouterHistory(createHashHistory)({ queryKey:false})
 
+/* const mongoose = require("mongoose");
+
+mongoose.connect('mongodb://localhost/avodaqkdb');
+mongoose.connection
+    .once('open', (done) => done())
+    .on('error', (err) => {
+        console.log('Warning', err)
+    });
+*/
+
 ReactDOM.render (
     <Router history={browserHistory} onUpdate={()=>window.scrollTo(0,0)}>
         <Route path="/" component={Choices} >
