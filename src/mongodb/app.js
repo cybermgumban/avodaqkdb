@@ -9,6 +9,11 @@ mongoose.Promise = global.Promise;
 
 if(process.env.NODE_ENV !== 'test') {
     mongoose.connect('mongodb://localhost/avodaqkdb');
+    mongoose.connection
+        .once('open', () => done())
+        .on('error', (err) => {
+            console.log('Warning', err)
+        });
 }
 
 app.use(bodyParser.json());
