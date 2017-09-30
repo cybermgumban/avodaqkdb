@@ -69,29 +69,11 @@ class Choices extends React.Component {
                 </div>
                     <br />
                 <div>
-                    <Link to="/function/add">
+                    <Link to="/function/Add">
                         <img 
                         style={{height:"50px", width:"50px"}}
                         src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Add-icon.png" alt="add icon"/>
                         <span style={{display:"block"}}>Add</span>
-                    </Link>
-                </div>
-                    <br />
-                <div>
-                    <Link to="/function/edit">
-                        <img 
-                        style={{height:"50px", width:"50px"}}
-                        src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png" alt="edit icon"/>
-                        <span style={{display:"block"}}>Edit</span>
-                    </Link>
-                </div>
-                    <br />
-                <div>
-                    <Link to="/function/delete">
-                        <img 
-                        style={{height:"50px", width:"50px"}}
-                        src="https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png" alt="delete icon"/>
-                        <span style={{display:"block"}}>Delete</span>
                     </Link>
                 </div>
             </div>
@@ -103,5 +85,25 @@ class Choices extends React.Component {
         );
     }
 }
+
+/*
+<div>
+<Link to="/function/Edit">
+    <img 
+    style={{height:"50px", width:"50px"}}
+    src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png" alt="edit icon"/>
+    <span style={{display:"block"}}>Edit</span>
+</Link>
+</div>
+<br />
+<div>
+<Link to="/function/Delete">
+    <img 
+    style={{height:"50px", width:"50px"}}
+    src="https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png" alt="delete icon"/>
+    <span style={{display:"block"}}>Delete</span>
+</Link>
+</div>
+*/
 
 module.exports = Choices;

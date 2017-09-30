@@ -8,7 +8,8 @@ var ShowAll = require("./components/ShowAll");
 var Disclaimer = require("./components/Disclaimer");
 var Search = require("./components/Search");
 var ShowOne = require("./components/ShowOne");
-var Aed = require("./components/Aed");
+var Add = require("./components/Add");
+var EditDelete = require("./components/EditDelete");
 
 //var appHistory = useRouterHistory(createHashHistory)({ queryKey:false})
 
@@ -29,7 +30,8 @@ ReactDOM.render (
             <Route path="function/showall" component={ShowAll} />
             <Route path="function/search" component={Search} />
             <Route path="function/showone/:title" component={ShowOne} />
-            <Route path="function/:func" component={Aed} />
+            <Route path="function/Add" component={Add} />
+            <Route path="function/:func" component={EditDelete} />
         </Route>
     </Router>,
     document.getElementById("root")
