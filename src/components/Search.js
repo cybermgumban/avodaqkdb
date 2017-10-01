@@ -1,5 +1,6 @@
 var React = require("react");
 var {Link} = require("react-router");
+var axios = require("axios");
 
 var dbjabber = require("../db/dbjabber");
 var dbcucm = require("../db/dbcucm");
@@ -22,8 +23,9 @@ class Search extends React.Component {
         super(props);
 
         this.state = {
-            type: "Jabber",
+            category: "jabber",
             keyword: "",
+            result: [],
             searchResult: []
         };
 
@@ -39,7 +41,7 @@ class Search extends React.Component {
         });
     }
 
-
+/*
     searchWA(db, index, keyword, title, description) {
         var workaround = [];
         for(var i=0; i<db.length; i++) {
@@ -57,6 +59,7 @@ class Search extends React.Component {
         }
         
     }
+
 
     handleSubmit() {
             if(this.state.type==="Jabber") {
@@ -144,7 +147,42 @@ class Search extends React.Component {
 
             }
     }
+*/
 
+
+
+    componentWillMount() {
+        return(
+            axios({
+                method: 'get',
+                url: 'http://localhost:3050/avodaqkdb',
+                data: {
+                    category: this.state.category,
+                    keyword: this.state.keyword
+                }
+            }).then((res) => {
+                this.setState = ({
+                    result: res
+                })
+            })
+        )
+    }
+
+
+    handleSubmit() {
+        var jabber = this.state.result.filter((db) => {
+            return db.category === "jabber"
+            })
+        var cucm = this.state.result.filter((db) => {
+            return db.category === "cucm"
+            })
+
+            console.log(cucm);
+
+            if(this.state.category === "jabber") {
+            }
+        
+    }
 
 
     render() {
@@ -154,10 +192,10 @@ class Search extends React.Component {
                     <select
                         style={{marginLeft: "40px", width: "160px", textAlignLast: "center"}} 
                         value={this.state.type} 
-                        name="type" 
+                        name="category" 
                         onChange={this.handleChange}>
-                        <option defaultValue value="Jabber">Jabber</option>
-                        <option value="CUCM">CUCM</option>
+                        <option defaultValue value="jabber">Jabber</option>
+                        <option value="cucm">CUCM</option>
                     </select>
                     </label>
                         <br /> <br />
