@@ -23,8 +23,11 @@ module.exports = {
         console.log("nakapasok kana sa delete")
         const titleProps = req.body.title;
 
-        Title.find(titleProps)
-        .then((result) => delete(`/avodaqkdb/${result._id}`))
+        Title.find({title: titleProps})
+        .then((result) => (
+            console.log(result[0]._id),
+            Title.findByIdAndRemove({_id: result[0]._id})
+        ))
             .then(title => res.send(title))
             .catch(next);
     }

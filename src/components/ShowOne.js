@@ -14,8 +14,8 @@ class ShowOne extends React.Component {
         this.deleteBtnClick = this.deleteBtnClick.bind(this);
     }
 
+
     deleteBtnClick() {
-        componentWillUnmount();
         var theAnswer = window.confirm("are you sure");
         if(theAnswer){
             axios({

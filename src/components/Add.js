@@ -7,7 +7,7 @@ class Add extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            category: "",
+            category: "jabber",
             title: "",
             description: "",
         }
@@ -69,12 +69,14 @@ class Add extends React.Component {
                 <h1>Let's Add some data!</h1>
 
                 <label>Category: 
-                    <input 
-                        style={{marginLeft: "42px", textAlign: "center", width: "800px"}} 
-                        value={this.state.keyword}
-                        type="text" 
+                    <select
+                        style={{marginLeft: "42px", textAlign: "center", width: "800px"}}  
+                        value={this.state.category} 
                         name="category" 
-                        onChange={this.handleChange}/>
+                        onChange={this.handleChange}>
+                        <option defaultValue value="jabber">Jabber</option>
+                        <option value="cucm">CUCM</option>
+                    </select>
                 </label> <br/>
                 <label>Title: 
                     <input 
