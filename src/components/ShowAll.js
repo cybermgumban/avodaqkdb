@@ -44,7 +44,7 @@ class ShowAll extends React.Component {
                 <h2>Jabber</h2>
                 {jabber.map((db, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
                                 state: { description: db.description,
@@ -58,7 +58,7 @@ class ShowAll extends React.Component {
                 <h2>CUCM</h2>
                 {cucm.map((db, index) => {
                     return (
-                        <li key={index}>
+                        <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
                                 state: { description: db.description,
