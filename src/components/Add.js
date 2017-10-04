@@ -70,7 +70,7 @@ class Add extends React.Component {
 
                 <label>Category: 
                     <select
-                        style={{marginLeft: "42px", textAlign: "center", width: "800px"}}  
+                        style={{marginLeft: "42px", textAlignLast: "center", width: "800px"}}  
                         value={this.state.category} 
                         name="category" 
                         onChange={this.handleChange}>

@@ -177,11 +177,9 @@ class Search extends React.Component {
             return db.category === "cucm"
             })
 
-            console.log(cucm);
-
             if(this.state.category === "jabber") {
-            }
-        
+                
+            }     
     }
 
 
