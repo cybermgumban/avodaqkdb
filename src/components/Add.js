@@ -11,23 +11,8 @@ class Add extends React.Component {
             title: "",
             description: "",
         }
-        this.getBtnClick = this.getBtnClick.bind(this);
         this.addBtnClick = this.addBtnClick.bind(this);
-        this.putBtnClick = this.putBtnClick.bind(this);
-        this.deleteBtnClick = this.deleteBtnClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    getBtnClick() {
-        axios({
-            method: 'get',
-            url: 'http://localhost:3050/avodaqkdb',
-        }).then((res) => {
-            console.log(res.data[0].category);
-            this.setState({
-                category: res.data[0].category
-            });
-        });
     }
 
     addBtnClick() {
@@ -43,14 +28,6 @@ class Add extends React.Component {
             console.log(res);
             alert("Successfully Added!");;
         });
-    }
-
-    putBtnClick() {
-
-    }
-
-    deleteBtnClick() {
-
     }
 
     handleChange(event) {

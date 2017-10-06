@@ -28,7 +28,6 @@ class ShowAll extends React.Component {
                 result: res.data,
             })
         }))
-
     }
 
     render() {

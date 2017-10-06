@@ -2,10 +2,6 @@ var React = require("react");
 var {Link} = require("react-router");
 var axios = require("axios");
 
-var dbjabber = require("../db/dbjabber");
-var dbcucm = require("../db/dbcucm");
-
-
 var searchStyle = {
     marginRight: "-10px",
     marginLeft: "-10px",
@@ -26,7 +22,6 @@ class Search extends React.Component {
             category: "jabber",
             keyword: "",
             result: [],
-            searchResult: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -42,115 +37,6 @@ class Search extends React.Component {
     }
 
 /*
-    searchWA(db, index, keyword, title, description) {
-        var workaround = [];
-        for(var i=0; i<db.length; i++) {
-            workaround.push(
-                                    (db[i].match(keyword)?
-                                    (<li  style={li} key={index}>
-                                        <Link to={{ pathname: `function/showone/${title}`, 
-                                        state:{ description: description, workaround: db } }}>
-                                        {title}
-                                        </Link>
-                                    </li>) : null
-                                    )
-            )
-            return workaround;
-        }
-        
-    }
-
-
-    handleSubmit() {
-            if(this.state.type==="Jabber") {
-                var searchResult = [];
-                searchResult = (
-                    dbjabber.map((db, index) => ((db.title.match(this.state.keyword)? 
-                        (<li style={li} key={index}>
-                            <Link to={{ pathname: `function/showone/${db.title}`, 
-                            state:{ description: db.description, workaround: db.workaround } }}>
-                            {db.title}
-                            </Link>
-                        </li>) : 
-
-                            (db.description.match(this.state.keyword)?
-                                (<li style={li} key={index}>
-                                    <Link to={{ pathname: `function/showone/${db.title}`, 
-                                    state:{ description: db.description, workaround: db.workaround } }}>
-                                    {db.title}
-                                    </Link>
-                                </li>) : 
-                                    this.searchWA(db.workaround, index, this.state.keyword, db.title, db.description)
-                                )
-                            )
-                    ))
-                    
-                )
-
-                function allIsNull(element, index, array) {
-                    for(var i=0;i<array.length;i++){
-                    return element[i] === null;
-                    }
-                }
-
-                if (searchResult.every(allIsNull) === true) {
-                    this.setState ({
-                    searchResult: <h3>We did not find any results... Please try again using another keyword.</h3>
-                    })
-                } else {
-                    this.setState ({
-                    searchResult: searchResult
-                    })
-                }
-
-            }
-
-            else if(this.state.type==="CUCM") {
-                searchResult = (
-                    dbcucm.map((db, index) => ((db.title.match(this.state.keyword)? 
-                        (<li style={li} key={index}>
-                            <Link to={{ pathname: `function/showone/${db.title}`, 
-                            state:{ description: db.description, workaround: db.workaround } }}>
-                            {db.title}
-                            </Link>
-                        </li>) : 
-
-                            (db.description.match(this.state.keyword)?
-                                (<li style={li} key={index}>
-                                    <Link to={{ pathname: `function/showone/${db.title}`, 
-                                    state:{ description: db.description, workaround: db.workaround } }}>
-                                    {db.title}
-                                    </Link>
-                                </li>) : 
-                                    this.searchWA(db.workaround, index, this.state.keyword, db.title, db.description)
-                                )
-                            )
-                    ))
-                    
-                )
-
-                function allIsNull(element, index, array) {
-                    for(var i=0;i<array.length;i++){
-                    return element[i] === null;
-                    }
-                }
-
-                if (searchResult.every(allIsNull) === true) {
-                    this.setState ({
-                    searchResult: <h3>We did not find any results... Please try again using another keyword.</h3>
-                    })
-                } else {
-                    this.setState ({
-                    searchResult: searchResult
-                    })
-                }
-
-            }
-    }
-*/
-
-
-
     componentWillMount() {
         return(
             axios({
@@ -167,21 +53,19 @@ class Search extends React.Component {
             })
         )
     }
-
+*/
 
     handleSubmit() {
-        var jabber = this.state.result.filter((db) => {
-            return db.category === "jabber"
-            })
-        var cucm = this.state.result.filter((db) => {
-            return db.category === "cucm"
-            })
+        axios({
+            method: 'get',
+            url: 'http://localhost:3050/avodaqkdb',
+            query: {
+                category: this.state.category
+            }
+        }).then((res) => {{
 
-            if(this.state.category === "jabber") {
-                
-            }     
+        }})
     }
-
 
     render() {
         return (
@@ -189,7 +73,7 @@ class Search extends React.Component {
                     <label>Type:
                     <select
                         style={{marginLeft: "40px", width: "160px", textAlignLast: "center"}} 
-                        value={this.state.type} 
+                        value={this.state.category} 
                         name="category" 
                         onChange={this.handleChange}>
                         <option defaultValue value="jabber">Jabber</option>
@@ -211,7 +95,6 @@ class Search extends React.Component {
                 <div style={searchStyle}>
                 </div>
                     <h2>Search Result:</h2>
-                    {this.state.searchResult}
             </div>
         );
     }
