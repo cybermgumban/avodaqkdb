@@ -22,6 +22,7 @@ class Search extends React.Component {
             category: "jabber",
             keyword: "",
             result: [],
+            newArr: []
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,37 +37,44 @@ class Search extends React.Component {
         });
     }
 
-/*
-    componentWillMount() {
-        return(
-            axios({
-                method: 'get',
-                url: 'http://localhost:3050/avodaqkdb',
-                data: {
-                    category: this.state.category,
-                    keyword: this.state.keyword
-                }
-            }).then((res) => {
-                this.setState = ({
-                    result: res
-                })
-            })
-        )
-    }
-*/
-
     handleSubmit() {
+        this.setState ({
+            newArr: []
+        })
+
         axios({
             method: 'get',
             url: 'http://localhost:3050/avodaqkdb',
-            query: {
-                category: this.state.category
+            params: {
+                category: this.state.category,
             }
         }).then((res) => {{
-
+            res.data.map((db,index) => {
+                return db.title.match(this.state.keyword) ? 
+                    this.state.newArr.push(db) : 
+                    db.description.match(this.state.keyword) ?
+                        this.state.newArr.push(db) : 
+                        null
+            });
         }})
     }
 
+    componentDidMount() {
+        this.setState ({
+            result: this.state.newArr.map((db,index) => {
+                <li key={index} style={li}>
+                    <Link to={{ 
+                        pathname: `/function/showone/${db.title}`,
+                        state: { description: db.description,
+                        }}} >
+                        {db.title}
+                    </Link>
+                </li>
+            })
+        })
+        console.log(this.state.result)
+    }
+    
     render() {
         return (
             <div>
@@ -95,6 +103,7 @@ class Search extends React.Component {
                 <div style={searchStyle}>
                 </div>
                     <h2>Search Result:</h2>
+                    {this.state.result}
             </div>
         );
     }

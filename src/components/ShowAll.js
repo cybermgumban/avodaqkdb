@@ -2,9 +2,6 @@ var React = require("react");
 var {Link} = require("react-router");
 var axios = require("axios");
 
-var dbjabber = require("../db/dbjabber");
-var dbcucm = require("../db/dbcucm");
-
 var li = {
     textIndent: "40px"
 }
