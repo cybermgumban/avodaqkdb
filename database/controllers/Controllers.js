@@ -36,5 +36,19 @@ module.exports = {
         ))
             .then(title => res.send(title))
             .catch(next);
+    },
+
+    update(req, res, next) {
+        console.log("nakapasok kana sa update")
+        const titleId = req.params.id;
+        const titleProps = req.body;
+
+        console.log(titleProps)
+        Title.findByIdAndUpdate(
+            { _id: titleId }, 
+            { title: titleProps.title, description: titleProps.description }, 
+            { new:true } 
+        ).then(title => res.send(title))  
+        .catch(next);
     }
 }

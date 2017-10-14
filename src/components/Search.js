@@ -22,7 +22,8 @@ class Search extends React.Component {
             category: "jabber",
             keyword: "",
             newArr: [],
-            searchResult: []
+            searchResult: [],
+            id: ""
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -44,22 +45,14 @@ class Search extends React.Component {
         }})
     }
 
-    handleChange(event) {
-        var name = event.target.name;
-        this.setState({
-            [name]: event.target.value,
-        });
-    }
-
     searchResult(arr) {
-        console.log(arr);
         const searchResult = (
             arr.map((db,index) => {
                     return (
                     <li key={index} style={li}>
                         <Link to={{ 
                             pathname: `/function/showone/${db.title}`,
-                            state: { description: db.description,
+                            state: { description: db.description, category: db.category, id: db._id
                             }}} >
                             {db.title}
                         </Link> 
@@ -90,8 +83,15 @@ class Search extends React.Component {
                     null
             )
         })
-
+        
         this.searchResult(arr)
+    }
+
+    handleChange(event) {
+        var name = event.target.name;
+        this.setState({
+            [name]: event.target.value,
+        });
     }
     
     render() {

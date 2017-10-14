@@ -1,5 +1,7 @@
 var React = require("react");
 var axios = require("axios");
+var {Link} = require("react-router");
+
 
 var li = {
     textIndent: "40px"
@@ -9,14 +11,15 @@ class ShowOne extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            title: this.props.params.title
+            title: this.props.params.title,
+            id: ""
         }
         this.deleteBtnClick = this.deleteBtnClick.bind(this);
     }
 
 
     deleteBtnClick() {
-        var theAnswer = window.confirm("are you sure");
+        var theAnswer = window.confirm("Are you sure?");
         if(theAnswer){
             axios({
                 method: 'delete',
@@ -47,14 +50,23 @@ class ShowOne extends React.Component {
                         float: "right", 
                         marginLeft: "5px" , 
                         marginRight: "5px"}}
-                        >Edit?
+                        >
+                            <Link to={{
+                                pathname: `/function/edit/${this.props.params.title}`,
+                                state: {
+                                    category: this.props.location.state.category,
+                                    description: this.props.location.state.description,
+                                    id: this.props.location.state.id
+                                }}} >
+                                Edit?
+                            </Link>
                 </button>
                 <br />
                 
                 <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
                 <p><b>Description:</b> {this.props.location.state.description}</p>
 
-            </div>
+        </div>
         );
     }
 }

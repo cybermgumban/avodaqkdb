@@ -8,44 +8,60 @@ class EditDelete extends React.Component {
             category: "",
             title: "",
             description: "",
+            id: ""
         }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.editBtnClick = this.editBtnClick.bind(this);
+    }
+
+    editBtnClick() {
+        console.log("pinindot ang edit")
+        axios({
+            method: 'put',
+            url: `http://localhost:3050/avodaqkdb/update/${this.props.location.state.id}`,
+            data: {
+                title: this.state.title,
+                description: this.state.description,
+            }
+        })
+    }
+
+    handleChange(event) {
+        var name = event.target.name;
+        this.setState({
+            [name]: event.target.value,
+        });
+
+        console.log(this.state.title)
     }
 
     render() {
         return (
             <div>
-                <h1>Let's {this.props.params.func} some data!</h1>
+                <h1>Let's Edit some data!</h1>
 
-                <label>Category: 
-                    <input 
-                        style={{marginLeft: "42px", textAlign: "center", width: "800px"}} 
-                        value={this.state.keyword}
-                        type="text" 
-                        name="category" 
-                        onChange={this.handleChange}/>
-                </label> <br/>
                 <label>Title: 
                     <input 
-                        style={{marginLeft: "75px", textAlign: "center", width: "800px"}} 
-                        value={this.state.keyword}
+                        style={{marginLeft: "75px", width: "800px"}} 
+                        defaultValue={this.props.params.title}
                         type="text" 
                         name="title" 
                         onChange={this.handleChange}/>
                 </label> <br />
                 <label>Description: 
                     <input 
-                        style={{marginLeft: "26px", textAlign: "center", width: "800px"}} 
-                        value={this.state.keyword}
+                        style={{marginLeft: "26px", width: "800px"}} 
+                        defaultValue={this.props.location.state.description}
                         type="text" 
                         name="description" 
                         onChange={this.handleChange}/>
                 </label> <br/>
-                <button onClick={this.addBtnClick}>{this.props.params.func}!
+                <button onClick={this.editBtnClick}>Edit!
                 </button>
             </div>
         );
     }
-
 }
 
 module.exports = EditDelete;

@@ -12,6 +12,7 @@ class ShowAll extends React.Component {
         
         this.state = ({
             result: [],
+            id: ""
         })
 
     }
@@ -43,7 +44,7 @@ class ShowAll extends React.Component {
                         <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
-                                state: { description: db.description,
+                                state: { description: db.description, category: db.category, id: db._id
                                 }}} >
                                 {db.title}
                             </Link>
@@ -57,7 +58,7 @@ class ShowAll extends React.Component {
                         <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
-                                state: { description: db.description,
+                                state: { description: db.description, category: db.category, id: db.id
                                 }}} >
                                 {db.title}
                             </Link>

@@ -31,7 +31,7 @@ ReactDOM.render (
             <Route path="function/search" component={Search} />
             <Route path="function/showone/:title" component={ShowOne} />
             <Route path="function/Add" component={Add} />
-            <Route path="function/:func" component={EditDelete} />
+            <Route path="function/edit/:title" component={EditDelete} />
         </Route>
     </Router>,
     document.getElementById("root")
