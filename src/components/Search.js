@@ -21,13 +21,27 @@ class Search extends React.Component {
         this.state = {
             category: "jabber",
             keyword: "",
-            result: [],
-            newArr: []
+            newArr: [],
+            searchResult: []
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.searchResult = this.searchResult.bind(this);
+    }
 
+    componentWillMount() {
+        axios({
+            method: 'get',
+            url: 'http://localhost:3050/avodaqkdb',
+            params: {
+                category: this.state.category,
+            }
+        }).then((resultArr) => {{
+            this.setState ({
+                newArr: resultArr
+            })
+        }})
     }
 
     handleChange(event) {
@@ -37,42 +51,47 @@ class Search extends React.Component {
         });
     }
 
-    handleSubmit() {
-        this.setState ({
-            newArr: []
-        })
+    searchResult(arr) {
+        console.log(arr);
+        const searchResult = (
+            arr.map((db,index) => {
+                    return (
+                    <li key={index} style={li}>
+                        <Link to={{ 
+                            pathname: `/function/showone/${db.title}`,
+                            state: { description: db.description,
+                            }}} >
+                            {db.title}
+                        </Link> 
+                    </li>
+                    )
+                })
+            )
 
-        axios({
-            method: 'get',
-            url: 'http://localhost:3050/avodaqkdb',
-            params: {
-                category: this.state.category,
-            }
-        }).then((res) => {{
-            res.data.map((db,index) => {
-                return db.title.match(this.state.keyword) ? 
-                    this.state.newArr.push(db) : 
-                    db.description.match(this.state.keyword) ?
-                        this.state.newArr.push(db) : 
-                        null
-            });
-        }})
+        if(searchResult[0] === undefined) {
+            this.setState({
+                searchResult: <h3>We did not find any results... Please try again using another keyword.</h3>
+            })
+        } else {
+            this.setState({
+                searchResult: searchResult
+            })
+        }
     }
 
-    componentDidMount() {
-        this.setState ({
-            result: this.state.newArr.map((db,index) => {
-                <li key={index} style={li}>
-                    <Link to={{ 
-                        pathname: `/function/showone/${db.title}`,
-                        state: { description: db.description,
-                        }}} >
-                        {db.title}
-                    </Link>
-                </li>
-            })
+    handleSubmit() {
+        const arr = [];
+        this.state.newArr.data.map((db,index) => {
+            return (
+            db.title.match(this.state.keyword) ? 
+                arr.push(db) : 
+                db.description.match(this.state.keyword) ?
+                    arr.push(db) : 
+                    null
+            )
         })
-        console.log(this.state.result)
+
+        this.searchResult(arr)
     }
     
     render() {
@@ -103,10 +122,15 @@ class Search extends React.Component {
                 <div style={searchStyle}>
                 </div>
                     <h2>Search Result:</h2>
-                    {this.state.result}
+                    {this.state.searchResult}
+
             </div>
         );
     }
 }
 
 module.exports = Search;
+
+/*
+
+*/
