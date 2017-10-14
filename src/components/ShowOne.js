@@ -2,11 +2,6 @@ var React = require("react");
 var axios = require("axios");
 var {Link} = require("react-router");
 
-
-var li = {
-    textIndent: "40px"
-}
-
 class ShowOne extends React.Component {
     constructor(props){
         super(props);
@@ -65,6 +60,9 @@ class ShowOne extends React.Component {
                 
                 <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
                 <p><b>Description:</b> {this.props.location.state.description}</p>
+                <p><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
+                <p><b>Workaround:</b> {this.props.location.state.workaround}</p>
+                <p><b>Resolution:</b> {this.props.location.state.resolution}</p>
 
         </div>
         );

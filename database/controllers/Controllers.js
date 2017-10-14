@@ -3,19 +3,12 @@ const Title = require("../model/model");
 module.exports = {
     showall(req, res, next) {
         console.log("nakapasok kana sa showall");
-        if(req.query.category) {
-            Title.find({ category: req.query.category })
-                .then((result) => {
-                    res.send(result);
-                })
-        } else {
             console.log("walang laman cat at key")
             Title.find({})
                 .then((result) => {
                     res.send(result);
                 });
-        }
-    },
+        },
 
     add(req, res, next) {
         console.log("nakapasok kana sa create")
@@ -43,7 +36,6 @@ module.exports = {
         const titleId = req.params.id;
         const titleProps = req.body;
 
-        console.log(titleProps)
         Title.findByIdAndUpdate(
             { _id: titleId }, 
             { title: titleProps.title, description: titleProps.description }, 

@@ -35,19 +35,21 @@ class Search extends React.Component {
         axios({
             method: 'get',
             url: 'http://localhost:3050/avodaqkdb',
-            params: {
-                category: this.state.category,
-            }
-        }).then((resultArr) => {{
+        }).then((resultArr) => {
             this.setState ({
                 newArr: resultArr
             })
-        }})
+        })
     }
 
     searchResult(arr) {
+
+        const newArr = arr.filter((arr) => {
+            return arr.category === this.state.category;
+        })
+
         const searchResult = (
-            arr.map((db,index) => {
+            newArr.map((db,index) => {
                     return (
                     <li key={index} style={li}>
                         <Link to={{ 

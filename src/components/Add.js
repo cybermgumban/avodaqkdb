@@ -10,6 +10,9 @@ class Add extends React.Component {
             category: "jabber",
             title: "",
             description: "",
+            ticket_tag: "",
+            workaround: [],
+            resolution: [],
         }
         this.addBtnClick = this.addBtnClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -47,7 +50,7 @@ class Add extends React.Component {
 
                 <label>Category: 
                     <select
-                        style={{marginLeft: "42px", textAlignLast: "center", width: "800px"}}  
+                        style={{marginLeft: "50px", textAlignLast: "center", width: "800px"}}  
                         value={this.state.category} 
                         name="category" 
                         onChange={this.handleChange}>
@@ -57,7 +60,7 @@ class Add extends React.Component {
                 </label> <br/>
                 <label>Title: 
                     <input 
-                        style={{marginLeft: "75px", textAlign: "center", width: "800px"}} 
+                        style={{marginLeft: "83px", textAlign: "center", width: "800px"}} 
                         value={this.state.keyword}
                         type="text" 
                         name="title" 
@@ -65,10 +68,34 @@ class Add extends React.Component {
                 </label> <br />
                 <label>Description: 
                     <input 
-                        style={{marginLeft: "26px", textAlign: "center", width: "800px"}} 
+                        style={{marginLeft: "34px", textAlign: "center", width: "800px"}} 
                         value={this.state.keyword}
                         type="text" 
                         name="description" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Related Tickets: 
+                    <input 
+                        style={{marginLeft: "9px", textAlign: "center", width: "800px"}} 
+                        value={this.state.keyword}
+                        type="text" 
+                        name="ticket_tag" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Workaround: 
+                    <input 
+                        style={{marginLeft: "29px", textAlign: "center", width: "800px"}} 
+                        value={this.state.keyword}
+                        type="text" 
+                        name="workaround" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Resolution: 
+                    <input 
+                        style={{marginLeft: "40px", textAlign: "center", width: "800px"}} 
+                        value={this.state.keyword}
+                        type="text" 
+                        name="resolution" 
                         onChange={this.handleChange}/>
                 </label> <br/>
                 <button onClick={this.addBtnClick}>Add!

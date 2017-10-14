@@ -1,7 +1,7 @@
 var React = require("react");
 var axios = require("axios");
 
-class EditDelete extends React.Component {
+class Edit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,7 @@ class EditDelete extends React.Component {
                 title: this.state.title,
                 description: this.state.description,
             }
-        })
+        }).then(() => alert("Edit Successful!"));
     }
 
     handleChange(event) {
@@ -43,7 +43,7 @@ class EditDelete extends React.Component {
 
                 <label>Title: 
                     <input 
-                        style={{marginLeft: "75px", width: "800px"}} 
+                        style={{marginLeft: "83px", width: "800px"}} 
                         defaultValue={this.props.params.title}
                         type="text" 
                         name="title" 
@@ -51,8 +51,32 @@ class EditDelete extends React.Component {
                 </label> <br />
                 <label>Description: 
                     <input 
-                        style={{marginLeft: "26px", width: "800px"}} 
+                        style={{marginLeft: "34px", width: "800px"}} 
                         defaultValue={this.props.location.state.description}
+                        type="text" 
+                        name="description" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Related Tickets: 
+                    <input 
+                        style={{marginLeft: "9px", width: "800px"}} 
+                        defaultValue={this.props.location.state.ticket_tag}
+                        type="text" 
+                        name="description" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Workaround: 
+                    <input 
+                        style={{marginLeft: "29px", width: "800px"}} 
+                        defaultValue={this.props.location.state.workaround}
+                        type="text" 
+                        name="description" 
+                        onChange={this.handleChange}/>
+                </label> <br/>
+                <label>Resolution: 
+                    <input 
+                        style={{marginLeft: "40px", width: "800px"}} 
+                        defaultValue={this.props.location.state.resolution}
                         type="text" 
                         name="description" 
                         onChange={this.handleChange}/>
@@ -64,4 +88,4 @@ class EditDelete extends React.Component {
     }
 }
 
-module.exports = EditDelete;
+module.exports = Edit;
