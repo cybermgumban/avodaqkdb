@@ -60,22 +60,13 @@ class ShowOne extends React.Component {
                 
                 <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
                 <p><b>Description:</b> {this.props.location.state.description}</p>
-                <p><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
-                <p><b>Workaround:</b> {this.props.location.state.workaround}</p>
+                <p><b>Workaround</b> {this.props.location.state.workaround}</p>
                 <p><b>Resolution:</b> {this.props.location.state.resolution}</p>
+                <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
 
         </div>
         );
     }
 }
-
-/*
-                <p><b>Troubleshooting:</b> {
-                    this.props.location.state.workaround.map((db, index) => (
-                        <li style={li} key={index}>
-                            {db}
-                        </li>
-                    ))}</p>
-*/
 
 module.exports = ShowOne;

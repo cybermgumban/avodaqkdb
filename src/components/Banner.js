@@ -86,24 +86,4 @@ class Choices extends React.Component {
     }
 }
 
-/*
-<div>
-<Link to="/function/Edit">
-    <img 
-    style={{height:"50px", width:"50px"}}
-    src="http://icons.iconarchive.com/icons/custom-icon-design/mono-general-2/512/edit-icon.png" alt="edit icon"/>
-    <span style={{display:"block"}}>Edit</span>
-</Link>
-</div>
-<br />
-<div>
-<Link to="/function/Delete">
-    <img 
-    style={{height:"50px", width:"50px"}}
-    src="https://maxcdn.icons8.com/Share/icon/Editing//delete1600.png" alt="delete icon"/>
-    <span style={{display:"block"}}>Delete</span>
-</Link>
-</div>
-*/
-
 module.exports = Choices;

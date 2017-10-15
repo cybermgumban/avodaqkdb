@@ -132,7 +132,3 @@ class Search extends React.Component {
 }
 
 module.exports = Search;
-
-/*
-
-*/
