@@ -22,7 +22,7 @@ class ShowAll extends React.Component {
     componentWillMount() {
         return (axios({
             method: 'get',
-            url: 'http://localhost:3050/avodaqkdb'
+            url: 'http://10.96.128.49:3050/avodaqkdb'
         }).then((res) => {
             this.setState({
                 result: res.data,

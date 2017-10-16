@@ -155,7 +155,7 @@ class Search extends React.Component {
         return(
             axios({
                 method: 'get',
-                url: 'http://localhost:3050/avodaqkdb',
+                url: 'http://10.96.128.49:3050/avodaqkdb',
                 data: {
                     category: this.state.category,
                     keyword: this.state.keyword

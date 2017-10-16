@@ -21,7 +21,7 @@ class Add extends React.Component {
     getBtnClick() {
         axios({
             method: 'get',
-            url: 'http://localhost:3050/avodaqkdb',
+            url: 'http://10.96.128.49:3050/avodaqkdb',
         }).then((res) => {
             console.log(res.data[0].category);
             this.setState({
@@ -33,7 +33,7 @@ class Add extends React.Component {
     addBtnClick() {
         axios({
             method: 'post',
-            url: 'http://localhost:3050/avodaqkdb',
+            url: 'http://10.96.128.49:3050/avodaqkdb',
             data: {
                 category: this.state.category,
                 title: this.state.title,
@@ -41,7 +41,7 @@ class Add extends React.Component {
             },
         }).then((res) => {
             console.log(res);
-            alert("Successfully Added!");;
+            alert("Successfully Added!");
         });
     }
 

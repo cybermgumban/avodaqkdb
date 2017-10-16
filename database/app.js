@@ -9,7 +9,7 @@ mongoose.Promise = global.Promise;
 
 if(process.env.NODE_ENV !== 'test') {
     console.log("helloooooo");
-    mongoose.connect('mongodb://localhost/avodaqkdb');
+    mongoose.connect('mongodb://10.96.128.49/avodaqkdb');
     mongoose.connection
         .once('open', done => done)
         .on('error', (err) => {

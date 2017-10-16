@@ -20,7 +20,7 @@ class ShowOne extends React.Component {
         if(theAnswer){
             axios({
                 method: 'delete',
-                url: 'http://localhost:3050/avodaqkdb',
+                url: 'http://10.96.128.49:3050/avodaqkdb',
                 data: {
                     title: this.props.params.title
                 }
