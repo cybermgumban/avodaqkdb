@@ -1,4 +1,6 @@
 const Title = require("../model/model");
+const Workaround = require("../model/model");
+const Resolution = require("../model/model");
 
 module.exports = {
     showall(req, res, next) {
@@ -13,10 +15,17 @@ module.exports = {
     add(req, res, next) {
         console.log("nakapasok kana sa create")
         const titleProps = req.body;
-        console.log(req);
-        Title.create(titleProps)
-            .then(title => res.send(title))
-            .catch(next);
+
+        Promise.all([
+            Workaround.create({ workaround_list: req.query.workarounds }), 
+            Resolution.create({ resolution_list: req.query.resolutions }), 
+        ]).then((res) => {
+            console.log(res);
+            console.log(res[0]._id);
+            console.log(res[1]._id);
+            Title.create(titleProps, { workarounds: res[0]._id, resolutions: res[1]._id })
+                .then((res) => console.log(res)); 
+        });
     },
 
     delete(req, res, next) {

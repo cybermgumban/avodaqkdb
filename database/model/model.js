@@ -5,11 +5,11 @@ const TitleSchema = new Schema ({
     category: String,
     title: {
         type: String,
-        required: [true, 'Title is required']
+        //required: [true, 'Title is required']
     },
     description: {
         type: String,
-        required: [true, 'Description is required']
+        //required: [true, 'Description is required']
     },
     ticket_tag: String,
     workarounds: [{
@@ -23,11 +23,11 @@ const TitleSchema = new Schema ({
 });
 
 const WorkaroundSchema = new Schema ({
-    workaround_list: []
+    workaround_list: ""
 });
 
 const ResolutionSchema = new Schema ({
-    resolution_list: []
+    resolution_list: ""
 });
 
 const Title = mongoose.model('title', TitleSchema);

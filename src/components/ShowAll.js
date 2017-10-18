@@ -44,7 +44,7 @@ class ShowAll extends React.Component {
                         <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
-                                state: { description: db.description, category: db.category, id: db._id
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workaround, resolution: db.resolution
                                 }}} >
                                 {db.title}
                             </Link>
