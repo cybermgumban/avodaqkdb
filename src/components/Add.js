@@ -9,19 +9,17 @@ class Add extends React.Component {
             title: "",
             description: "",
             ticket_tag: "",
-            workarounds: "",
-            resolutions: "",
-            workaroundId: "",
-            resolutionId: "",
+            workarounds: [],
+            resolutions: [],
         }
         this.addBtnClick = this.addBtnClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
     }
 
     addBtnClick() {
-//        const arrWorkaround = this.state.workarounds.split(",");
-//        const arrResolution = this.state.resolutions.split(",");
-
+        const workaround = this.state.workarounds.split("\n");
+        const resolution = this.state.resolutions.split("\n");
+        
         axios({
             method: 'post',
             url: 'http://localhost:3050/avodaqkdb',
@@ -30,10 +28,10 @@ class Add extends React.Component {
                 title: this.state.title,
                 description: this.state.description,
                 ticket_tag: this.state.ticket_tag,
-            },            
+            },
             params: {
-                workarounds: this.state.workarounds,
-                resolutions: this.state.resolutions, 
+                workaround_list: workaround,
+                resolution_list: resolution, 
                 }
         }).then(() => alert("Successfully Added!"));
     }

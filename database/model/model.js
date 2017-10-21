@@ -22,16 +22,6 @@ const TitleSchema = new Schema ({
     }]
 });
 
-const WorkaroundSchema = new Schema ({
-    workaround_list: ""
-});
-
-const ResolutionSchema = new Schema ({
-    resolution_list: ""
-});
-
 const Title = mongoose.model('title', TitleSchema);
-const Workaround = mongoose.model('workaround', WorkaroundSchema);
-const Resolution = mongoose.model('resolution', ResolutionSchema);
 
-module.exports = Title, Workaround, Resolution;
+module.exports = Title;

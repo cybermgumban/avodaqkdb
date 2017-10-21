@@ -1,31 +1,31 @@
 const Title = require("../model/model");
-const Workaround = require("../model/model");
-const Resolution = require("../model/model");
+const Workaround = require("../model/workaround");
+const Resolution = require("../model/resolution");
 
 module.exports = {
     showall(req, res, next) {
         console.log("nakapasok kana sa showall");
-            console.log("walang laman cat at key")
+
             Title.find({})
                 .then((result) => {
-                    res.send(result);
+                    Workaround.find({ _id: result })
                 });
-        },
+                res.send(result);
+                
+            },
 
     add(req, res, next) {
         console.log("nakapasok kana sa create")
         const titleProps = req.body;
 
-        Promise.all([
-            Workaround.create({ workaround_list: req.query.workarounds }), 
-            Resolution.create({ resolution_list: req.query.resolutions }), 
-        ]).then((res) => {
-            console.log(res);
-            console.log(res[0]._id);
-            console.log(res[1]._id);
-            Title.create(titleProps, { workarounds: res[0]._id, resolutions: res[1]._id })
-                .then((res) => console.log(res)); 
-        });
+        const workaroundNew = new Workaround({ workaround_list: req.query.workaround_list })
+        const resolutionNew = new Resolution({ resolution_list: req.query.resolution_list })
+
+        Promise.all([ workaroundNew.save(), resolutionNew.save() ])
+            .then((res) => {
+                const titleNew = new Title({ category: titleProps.category, title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag, workarounds: res[0]._id, resolutions: res[1]._id })
+                titleNew.save();
+            });
     },
 
     delete(req, res, next) {
@@ -33,10 +33,9 @@ module.exports = {
         const titleProps = req.body.title;
 
         Title.find({title: titleProps})
-        .then((result) => (
-            Title.findByIdAndRemove({_id: result[0]._id})
-        ))
-            .then(title => res.send(title))
+        .then((result) => Promise.all([Workaround.findByIdAndRemove({ _id: result[0].workarounds }), Resolution.findByIdAndRemove({ _id: result[0].resolutions })]))
+            .then(() => Title.find({title: titleProps}))
+            .then((result) => Title.findByIdAndRemove({ _id: result[0]._id }))
             .catch(next);
     },
 
