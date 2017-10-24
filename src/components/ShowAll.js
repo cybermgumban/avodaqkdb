@@ -35,16 +35,24 @@ class ShowAll extends React.Component {
         var cucm = this.state.result.filter((db) => {
             return db.category === "cucm"
             })
+        
+        if(jabber[0] !== undefined) 
+        {
+            console.log(jabber);
+        //    console.log(jabber[0].workarounds[0].workaround_list[0])
+        }
 
         return (
             <div>
                 <h2>Jabber</h2>
                 {jabber.map((db, index) => {
+                    {console.log(db)}
+                                            
                     return (
                         <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
-                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workaround, resolution: db.resolution
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
                                 }}} >
                                 {db.title}
                             </Link>

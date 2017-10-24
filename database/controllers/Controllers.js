@@ -7,11 +7,12 @@ module.exports = {
         console.log("nakapasok kana sa showall");
 
             Title.find({})
+                .populate('workarounds')
+                .populate('resolutions')
                 .then((result) => {
-                    Workaround.find({ _id: result })
-                });
-                res.send(result);
-                
+                    console.log(result)
+                    res.send(result);
+                })
             },
 
     add(req, res, next) {

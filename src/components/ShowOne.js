@@ -2,12 +2,17 @@ var React = require("react");
 var axios = require("axios");
 var {Link} = require("react-router");
 
+var li = {
+    textIndent: "40px"
+}
+
 class ShowOne extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             title: this.props.params.title,
-            id: ""
+            id: "",
+            workaroundlist: [],
         }
         this.deleteBtnClick = this.deleteBtnClick.bind(this);
     }
@@ -30,6 +35,12 @@ class ShowOne extends React.Component {
     }
 
     render() {
+        let workaround = [];
+        let resolution = [];
+        workaround = this.props.location.state.workaround;
+        resolution = this.props.location.state.resolution;
+        
+
         return (
             <div>
                 <button 
@@ -57,11 +68,17 @@ class ShowOne extends React.Component {
                             </Link>
                 </button>
                 <br />
-                
+              
                 <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
                 <p><b>Description:</b> {this.props.location.state.description}</p>
-                <p><b>Workaround</b> {this.props.location.state.workaround}</p>
-                <p><b>Resolution:</b> {this.props.location.state.resolution}</p>
+                <b>Workaround:</b>
+                    {workaround.map((db,index) => {
+                    return <p key={index} style={li}>{db}</p>
+                    })}
+                <b>Resolution:</b>
+                    {resolution.map((db,index) => {
+                    return <p key={index} style={li}>{db}</p>
+                    })}
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
 
         </div>
