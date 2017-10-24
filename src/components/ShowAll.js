@@ -2,6 +2,8 @@ var React = require("react");
 var {Link} = require("react-router");
 var axios = require("axios");
 
+var serverIp = require("./ServerIp");
+
 var li = {
     textIndent: "40px"
 }
@@ -20,7 +22,7 @@ class ShowAll extends React.Component {
     componentWillMount() {
         return (axios({
             method: 'get',
-            url: 'http://localhost:3050/avodaqkdb'
+            url: `http://${serverIp}/avodaqkdb`
         }).then((res) => {
             this.setState({
                 result: res.data,
@@ -35,19 +37,11 @@ class ShowAll extends React.Component {
         var cucm = this.state.result.filter((db) => {
             return db.category === "cucm"
             })
-        
-        if(jabber[0] !== undefined) 
-        {
-            console.log(jabber);
-        //    console.log(jabber[0].workarounds[0].workaround_list[0])
-        }
 
         return (
             <div>
                 <h2>Jabber</h2>
-                {jabber.map((db, index) => {
-                    {console.log(db)}
-                                            
+                {jabber.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
                             <Link to={{ 
@@ -66,7 +60,7 @@ class ShowAll extends React.Component {
                         <li key={index} style={li}>
                             <Link to={{ 
                                 pathname: `/function/showone/${db.title}`,
-                                state: { description: db.description, category: db.category, id: db.id
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
                                 }}} >
                                 {db.title}
                             </Link>

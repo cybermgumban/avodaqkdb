@@ -33,7 +33,9 @@ class Add extends React.Component {
                 workaround_list: workaround,
                 resolution_list: resolution, 
                 }
-        }).then(() => alert("Successfully Added!"));
+        })
+        
+        alert("Successfully Added!");
     }
 
     handleChange(event) {

@@ -2,6 +2,9 @@ var React = require("react");
 var axios = require("axios");
 var {Link} = require("react-router");
 
+var serverIp = require("./ServerIp");
+
+
 var li = {
     textIndent: "40px"
 }
@@ -23,7 +26,7 @@ class ShowOne extends React.Component {
         if(theAnswer){
             axios({
                 method: 'delete',
-                url: 'http://localhost:3050/avodaqkdb',
+                url: `http://${serverIp}/avodaqkdb`,
                 data: {
                     title: this.props.params.title
                 }
@@ -73,11 +76,11 @@ class ShowOne extends React.Component {
                 <p><b>Description:</b> {this.props.location.state.description}</p>
                 <b>Workaround:</b>
                     {workaround.map((db,index) => {
-                    return <p key={index} style={li}>{db}</p>
+                    return <li key={index} style={li}>{db}</li>
                     })}
                 <b>Resolution:</b>
                     {resolution.map((db,index) => {
-                    return <p key={index} style={li}>{db}</p>
+                    return <li key={index} style={li}>{db}</li>
                     })}
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
 

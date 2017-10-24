@@ -2,6 +2,8 @@ var React = require("react");
 var {Link} = require("react-router");
 var axios = require("axios");
 
+var serverIp = require("./ServerIp");
+
 var searchStyle = {
     marginRight: "-10px",
     marginLeft: "-10px",
@@ -34,7 +36,7 @@ class Search extends React.Component {
     componentWillMount() {
         axios({
             method: 'get',
-            url: 'http://localhost:3050/avodaqkdb',
+            url: `http://${serverIp}/avodaqkdb`,
         }).then((resultArr) => {
             this.setState ({
                 newArr: resultArr
@@ -54,7 +56,7 @@ class Search extends React.Component {
                     <li key={index} style={li}>
                         <Link to={{ 
                             pathname: `/function/showone/${db.title}`,
-                            state: { description: db.description, category: db.category, id: db._id
+                            state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
                             }}} >
                             {db.title}
                         </Link> 
