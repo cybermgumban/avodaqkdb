@@ -65,7 +65,10 @@ class ShowOne extends React.Component {
                                 state: {
                                     category: this.props.location.state.category,
                                     description: this.props.location.state.description,
-                                    id: this.props.location.state.id
+                                    id: this.props.location.state.id,
+                                    ticket_tag: this.props.location.state.ticket_tag,
+                                    workaround: workaround,
+                                    resolution: resolution,
                                 }}} >
                                 Edit?
                             </Link>

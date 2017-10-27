@@ -108,7 +108,11 @@ class Search extends React.Component {
                         name="category" 
                         onChange={this.handleChange}>
                         <option defaultValue value="jabber">Jabber</option>
-                        <option value="cucm">CUCM</option>
+                        <option value="cucm">Cisco Unified Communications Manager</option>
+                        <option value="imp">Cisco Instant Messaging and Presence</option>
+                        <option value="cuc">Cisco Unity Connection</option>
+                        <option value="vg">Voice Gateway</option>
+
                     </select>
                     </label>
                         <br /> <br />

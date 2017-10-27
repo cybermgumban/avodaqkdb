@@ -12,12 +12,14 @@ module.exports = {
                 .then((result) => {
                     console.log(result)
                     res.send(result);
-                })
+                }).catch(next);
             },
 
     add(req, res, next) {
         console.log("nakapasok kana sa create")
         const titleProps = req.body;
+
+        console.log(req.query.workaround_list)
 
         const workaroundNew = new Workaround({ workaround_list: req.query.workaround_list })
         const resolutionNew = new Resolution({ resolution_list: req.query.resolution_list })
@@ -26,7 +28,7 @@ module.exports = {
             .then((res) => {
                 const titleNew = new Title({ category: titleProps.category, title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag, workarounds: res[0]._id, resolutions: res[1]._id })
                 titleNew.save();
-            });
+            }).catch(next);
     },
 
     delete(req, res, next) {
@@ -47,9 +49,15 @@ module.exports = {
 
         Title.findByIdAndUpdate(
             { _id: titleId }, 
-            { title: titleProps.title, description: titleProps.description }, 
+            { title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag }, 
             { new:true } 
-        ).then(title => res.send(title))  
-        .catch(next);
+        ).then((result) => {
+
+            Promise.all([
+            Workaround.findByIdAndUpdate({ _id: result.workarounds }, { workaround_list: req.query.workaround_list }, { new:true }),
+            Resolution.findByIdAndUpdate({ _id: result.resolutions }, { resolution_list: req.query.resolution_list }, { new:true }) 
+            ]).then(title => res.send(title))
+                .catch(next);
+        }).catch(next);
     }
 }
