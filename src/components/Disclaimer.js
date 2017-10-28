@@ -14,6 +14,7 @@ class Disclaimer extends React.Component {
             <li style={{textAlign:"left"}}>Able to add and show images in workaround and resolution</li>
             <li style={{textAlign:"left"}}>Create admin account and user account</li>
             <li style={{textAlign:"left"}}>Add Network, Security and Server Guide/Information</li>
+            <li style={{textAlign:"left"}}>Automatic Backup of MongoDB to NAS</li>
             <p style={{marginTop:"120px", fontSize: "20px"}}>Coded by: Marlon Gumban</p>
             </div>
         );
