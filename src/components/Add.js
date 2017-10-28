@@ -66,7 +66,7 @@ class Add extends React.Component {
                 <label>Title: 
                     <input 
                         style={{marginLeft: "83px", width: "800px"}} 
-                        value={this.state.keyword}
+                        value={this.state.title}
                         type="text" 
                         name="title" 
                         onChange={this.handleChange}/>
@@ -74,7 +74,7 @@ class Add extends React.Component {
                 <label>Description: 
                     <input 
                         style={{marginLeft: "34px", width: "800px"}} 
-                        value={this.state.keyword}
+                        value={this.state.description}
                         type="text" 
                         name="description" 
                         onChange={this.handleChange}/>
@@ -82,7 +82,7 @@ class Add extends React.Component {
                 <label>Related Tickets: 
                     <input 
                         style={{marginLeft: "9px", width: "800px"}} 
-                        value={this.state.keyword}
+                        value={this.state.ticket_tag}
                         type="text" 
                         name="ticket_tag" 
                         onChange={this.handleChange}/>
@@ -90,7 +90,7 @@ class Add extends React.Component {
                 <label>Workaround: 
                     <textarea 
                         style={{marginLeft: "29px", width: "800px", height: "100px"}} 
-                        value={this.state.keyword}
+                        value={this.state.workarounds}
                         type="text" 
                         name="workarounds" 
                         onChange={this.handleChange}/>
@@ -98,7 +98,7 @@ class Add extends React.Component {
                 <label>Resolution: 
                     <textarea 
                         style={{marginLeft: "40px", width: "800px", height: "100px"}} 
-                        value={this.state.keyword}
+                        value={this.state.resolutions}
                         type="text" 
                         name="resolutions" 
                         onChange={this.handleChange}/>

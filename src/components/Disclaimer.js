@@ -10,10 +10,10 @@ class Disclaimer extends React.Component {
             </h1>
             <br /><br/> <br />
             <h3 style={{textAlign:"left"}}>Future updates / improvements:</h3>
-            <li style={{textAlign:"left"}}>Fix Edit bug</li>
-            <li style={{textAlign:"left"}}>Able to add and show images</li>
+            <li style={{textAlign:"left"}}>Improve Edit Function to be more user friendly</li>
+            <li style={{textAlign:"left"}}>Able to add and show images in workaround and resolution</li>
             <li style={{textAlign:"left"}}>Create admin account and user account</li>
-            <li style={{textAlign:"left"}}>Add Network, Security and Server</li>
+            <li style={{textAlign:"left"}}>Add Network, Security and Server Guide/Information</li>
             <p style={{marginTop:"120px", fontSize: "20px"}}>Coded by: Marlon Gumban</p>
             </div>
         );
