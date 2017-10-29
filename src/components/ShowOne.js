@@ -4,11 +4,6 @@ var {Link} = require("react-router");
 
 var serverIp = require("./ServerIp");
 
-
-var li = {
-    textIndent: "40px"
-}
-
 class ShowOne extends React.Component {
     constructor(props){
         super(props);
@@ -79,11 +74,11 @@ class ShowOne extends React.Component {
                 <p><b>Description:</b> {this.props.location.state.description}</p>
                 <b>Workaround:</b>
                     {workaround.map((db,index) => {
-                    return <li key={index} style={li}>{db}</li>
+                    return <li key={index}>{db}</li>
                     })}
                 <b>Resolution:</b>
                     {resolution.map((db,index) => {
-                    return <li key={index} style={li}>{db}</li>
+                    return <li key={index}>{db}</li>
                     })}
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
 

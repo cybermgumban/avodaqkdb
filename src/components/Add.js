@@ -1,6 +1,8 @@
 var React = require("react");
 var axios = require("axios");
 
+var serverIp = require("./ServerIp");
+
 class Add extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +24,7 @@ class Add extends React.Component {
         
         axios({
             method: 'post',
-            url: 'http://localhost:3050/avodaqkdb',
+            url: `http://${serverIp}/avodaqkdb`,
             data: {
                 category: this.state.category,
                 title: this.state.title,

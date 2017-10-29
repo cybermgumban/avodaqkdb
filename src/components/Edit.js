@@ -1,6 +1,8 @@
 var React = require("react");
 var axios = require("axios");
 
+var serverIp = require("./ServerIp");
+
 class Edit extends React.Component {
     constructor(props) {
         super(props);
@@ -44,7 +46,7 @@ class Edit extends React.Component {
 
         axios({
             method: 'put',
-            url: `http://localhost:3050/avodaqkdb/update/${this.props.location.state.id}`,
+            url: `http://${serverIp}/avodaqkdb/update/${this.props.location.state.id}`,
             data: {
                 title: this.state.title,
                 description: this.state.description,
