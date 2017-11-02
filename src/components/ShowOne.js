@@ -27,6 +27,7 @@ class ShowOne extends React.Component {
                 }
             })
             alert("Successfully Deleted");
+            window.location.reload();
         } else {
             alert("Delete Cancelled");
         }
