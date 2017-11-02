@@ -5,7 +5,8 @@ var axios = require("axios");
 var serverIp = require("./ServerIp");
 
 var li = {
-    textIndent: "40px"
+    textIndent: "40px",
+    fontSize: "15px",
 }
 
 class ShowAll extends React.Component {
@@ -46,10 +47,13 @@ class ShowAll extends React.Component {
         var vg = this.state.result.filter((db) => {
             return db.category === "vg"
             })
+        var exp = this.state.result.filter((db) => {
+            return db.category === "exp"
+            })
 
         return (
             <div>
-                <h2>Jabber</h2>
+                <h3>Jabber</h3>
                 {jabber.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
@@ -63,7 +67,7 @@ class ShowAll extends React.Component {
                     )
                 })}
 
-                <h2>Cisco Unified Communications Manager</h2>
+                <h3>Cisco Unified Communications Manager</h3>
                 {cucm.map((db, index) => {
                     return (
                         <li key={index} style={li}>
@@ -77,7 +81,7 @@ class ShowAll extends React.Component {
                     )
                 })}
 
-                <h2>Cisco Instant Messaging and Presence</h2>
+                <h3>Cisco Instant Messaging and Presence</h3>
                 {imp.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
@@ -91,7 +95,7 @@ class ShowAll extends React.Component {
                     )
                 })}
 
-                <h2>Cisco Unity Connection</h2>
+                <h3>Cisco Unity Connection</h3>
                 {cuc.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
@@ -105,8 +109,22 @@ class ShowAll extends React.Component {
                     )
                 })}
 
-                <h2>Voice Gateway</h2>
+                <h3>Voice Gateway</h3>
                 {vg.map((db, index) => {                                      
+                    return (
+                        <li key={index} style={li}>
+                            <Link to={{ 
+                                pathname: `/function/showone/${db.title}`,
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
+                                }}} >
+                                {db.title}
+                            </Link>
+                        </li>
+                    )
+                })}
+
+                <h3>Expressway</h3>
+                {exp.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
                             <Link to={{ 

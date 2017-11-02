@@ -25,7 +25,8 @@ class Search extends React.Component {
             keyword: "",
             newArr: [],
             searchResult: [],
-            id: ""
+            id: "",
+            ticket_tag: "",
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -39,7 +40,7 @@ class Search extends React.Component {
             url: `http://${serverIp}/avodaqkdb`,
         }).then((resultArr) => {
             this.setState ({
-                newArr: resultArr
+                newArr: resultArr.data
             })
         })
     }
@@ -78,13 +79,16 @@ class Search extends React.Component {
 
     handleSubmit() {
         const arr = [];
-        this.state.newArr.data.map((db,index) => {
+        console.log(this.state.newArr[0].workarounds);
+        this.state.newArr.map((db,index) => {
             return (
             db.title.match(this.state.keyword) ? 
                 arr.push(db) : 
                 db.description.match(this.state.keyword) ?
                     arr.push(db) : 
-                    null
+                    db.ticket_tag.match(this.state.keyword) ?
+                        arr.push(db) : 
+                            null
             )
         })
         
@@ -112,6 +116,7 @@ class Search extends React.Component {
                         <option value="imp">Cisco Instant Messaging and Presence</option>
                         <option value="cuc">Cisco Unity Connection</option>
                         <option value="vg">Voice Gateway</option>
+                        <option value="exp">Expressway</option>
 
                     </select>
                     </label>

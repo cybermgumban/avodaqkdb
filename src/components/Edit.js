@@ -126,8 +126,7 @@ class Edit extends React.Component {
                         name="resolution" 
                         onChange={this.handleChange}/>
                 </label> <br/>
-                <button onClick={this.editBtnClick}>Edit!
-                </button>
+                <button onClick={this.editBtnClick}>Edit!</button>
             </div>
         );
     }

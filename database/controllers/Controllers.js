@@ -54,8 +54,8 @@ module.exports = {
         ).then((result) => {
 
             Promise.all([
-            Workaround.findByIdAndUpdate({ _id: result.workarounds }, { workaround_list: req.query.workaround_list }, { new:true }),
-            Resolution.findByIdAndUpdate({ _id: result.resolutions }, { resolution_list: req.query.resolution_list }, { new:true }) 
+            Workaround.findByIdAndUpdate({ _id: result.workarounds }, { workaround_list: req.query.workaround_list }),
+            Resolution.findByIdAndUpdate({ _id: result.resolutions }, { resolution_list: req.query.resolution_list }) 
             ]).then(title => res.send(title))
                 .catch(next);
         }).catch(next);

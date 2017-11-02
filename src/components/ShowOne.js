@@ -31,7 +31,7 @@ class ShowOne extends React.Component {
             alert("Delete Cancelled");
         }
     }
-
+ 
     render() {
         let workaround = [];
         let resolution = [];
@@ -70,13 +70,13 @@ class ShowOne extends React.Component {
                 </button>
                 <br />
               
-                <h3 style={{textAlign:"center"}}>Title: {this.props.params.title}</h3>
-                <p><b>Description:</b> {this.props.location.state.description}</p>
-                <b>Workaround:</b>
+                <h3 style={{textAlign:"center", fontSize: "15px"}}>Title: {this.props.params.title}</h3>
+                <p style={{fontSize: "15px"}}><b>Description:</b> {this.props.location.state.description}</p>
+                <b style={{fontSize: "15px"}}>Troubleshooting / Workaround:</b>
                     {workaround.map((db,index) => {
                     return <li key={index}>{db}</li>
                     })}
-                <b>Resolution:</b>
+                <b style={{fontSize: "15px"}}>Resolution:</b>
                     {resolution.map((db,index) => {
                     return <li key={index}>{db}</li>
                     })}

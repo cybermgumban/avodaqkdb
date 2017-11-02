@@ -9,6 +9,14 @@ class Disclaimer extends React.Component {
                 This avodaq Knowledge Database purpose is to have a central database for all ASC guides that will greatly help new and existing ASC engineers.                
             </h1>
             <br /><br/> <br />
+            <h3 style={{textAlign:"left"}}>Finished Improvements:</h3>
+            <li style={{textAlign:"left"}}>Change "Workaround" to "Troubleshooting / Workaround"</li>
+            <li style={{textAlign:"left"}}>Add Expressway Category</li>
+            <li style={{textAlign:"left"}}>Decrease font size</li>
+            <li style={{textAlign:"left"}}>Fixed duplicate when editing a data</li>
+
+            <br />
+
             <h3 style={{textAlign:"left"}}>Future updates / improvements:</h3>
             <li style={{textAlign:"left"}}>Able to add and show images in workaround and resolution</li>
             <li style={{textAlign:"left"}}>Fix a bug, duplicating inputs</li>

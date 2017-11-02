@@ -63,6 +63,7 @@ class Add extends React.Component {
                         <option value="imp">Cisco Instant Messaging and Presence</option>
                         <option value="cuc">Cisco Unity Connection</option>
                         <option value="vg">Voice Gateway</option>
+                        <option value="exp">Expressway</option>
                     </select>
                 </label> <br/>
                 <label>Title: 
