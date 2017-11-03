@@ -64,6 +64,10 @@ class Add extends React.Component {
                         <option value="cuc">Cisco Unity Connection</option>
                         <option value="vg">Voice Gateway</option>
                         <option value="exp">Expressway</option>
+                        <option value="spark">Spark</option>
+                        <option value="gen">General</option>
+                        <option value="andtek">Andtek</option>
+
                     </select>
                 </label> <br/>
                 <label>Title: 

@@ -77,6 +77,7 @@ class ShowOne extends React.Component {
                     {workaround.map((db,index) => {
                     return <li key={index}>{db}</li>
                     })}
+                <br />
                 <b style={{fontSize: "15px"}}>Resolution:</b>
                     {resolution.map((db,index) => {
                     return <li key={index}>{db}</li>

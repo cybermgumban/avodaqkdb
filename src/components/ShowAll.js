@@ -50,9 +50,19 @@ class ShowAll extends React.Component {
         var exp = this.state.result.filter((db) => {
             return db.category === "exp"
             })
+        var spark = this.state.result.filter((db) => {
+            return db.category === "spark"
+            })
+        var gen = this.state.result.filter((db) => {
+            return db.category === "gen"
+            })
+        var andtek = this.state.result.filter((db) => {
+            return db.category === "andtek"
+            })
 
         return (
             <div>
+
                 <h3>Jabber</h3>
                 {jabber.map((db, index) => {                                      
                     return (
@@ -125,6 +135,48 @@ class ShowAll extends React.Component {
 
                 <h3>Expressway</h3>
                 {exp.map((db, index) => {                                      
+                    return (
+                        <li key={index} style={li}>
+                            <Link to={{ 
+                                pathname: `/function/showone/${db.title}`,
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
+                                }}} >
+                                {db.title}
+                            </Link>
+                        </li>
+                    )
+                })}
+
+                <h3>Spark</h3>
+                {spark.map((db, index) => {                                      
+                    return (
+                        <li key={index} style={li}>
+                            <Link to={{ 
+                                pathname: `/function/showone/${db.title}`,
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
+                                }}} >
+                                {db.title}
+                            </Link>
+                        </li>
+                    )
+                })}
+
+                <h3>General</h3>
+                {gen.map((db, index) => {                                      
+                    return (
+                        <li key={index} style={li}>
+                            <Link to={{ 
+                                pathname: `/function/showone/${db.title}`,
+                                state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
+                                }}} >
+                                {db.title}
+                            </Link>
+                        </li>
+                    )
+                })}
+
+                <h3>Andtek</h3>
+                {andtek.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
                             <Link to={{ 
