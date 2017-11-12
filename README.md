@@ -2,6 +2,11 @@ This project is my first project as a ReactJS self study professional.
 
 It consists of all the knowledge database, guides and such, that the time will come that future engineers will be able to use this database as reference for past issues, and newbie guides for troubleshooting network issues.
 
+Used the following:
+- ReactJS -> Frontend
+- ExpressJS -> Middleware
+- NodeJS, MongoDB -> Backend
+
 This is currently on beta-testing stage locally within my current employer network.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
