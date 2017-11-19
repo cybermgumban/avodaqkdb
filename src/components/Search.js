@@ -22,6 +22,7 @@ class Search extends React.Component {
 
         this.state = {
             category: "jabber",
+            customer: "",
             keyword: "",
             newArr: [],
             searchResult: [],
@@ -57,10 +58,10 @@ class Search extends React.Component {
                     <li key={index} style={li}>
                         <Link to={{ 
                             pathname: `/function/showone/${db.title}`,
-                            state: { description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
+                            state: { customer: db.customer, description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
                             }}} >
                             {db.title}
-                        </Link> 
+                        </Link> <span style={{color: "red"}}><i>{(db.customer !== "N/A") ? db.customer : "" }</i></span>
                     </li>
                     )
                 })
@@ -79,7 +80,6 @@ class Search extends React.Component {
 
     handleSubmit() {
         const arr = [];
-        console.log(this.state.newArr[0].workarounds);
         this.state.newArr.map((db,index) => {
             return (
             db.title.match(this.state.keyword) ? 

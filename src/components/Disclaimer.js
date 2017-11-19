@@ -11,12 +11,7 @@ class Disclaimer extends React.Component {
             <br /><br/> <br /> */}
             <br /> <br/>
             <h3 style={{textAlign:"left"}}>Finished Improvements:</h3>
-            <li style={{textAlign:"left"}}>Change "Workaround" to "Troubleshooting / Workaround"</li>
-            <li style={{textAlign:"left"}}>Add Expressway, General, Spark and Andtek Category</li>
-            <li style={{textAlign:"left"}}>Decrease font size</li>
-            <li style={{textAlign:"left"}}>Fixed duplicate when editing a data</li>
-            <li style={{textAlign:"left"}}>Smaller Font in homepage</li>
-            <li style={{textAlign:"left"}}>Fixed duplicate when editing a data</li>
+            <li style={{textAlign:"left"}}>Added tag for Top 5 customers in both GUI and Database</li>
 
             <br />
 
@@ -28,7 +23,6 @@ class Disclaimer extends React.Component {
             <li style={{textAlign:"left"}}>Improve Edit Function to be more user friendly</li>
             <li style={{textAlign:"left"}}>Add Network, Security and Server Guide/Information</li>
             <li style={{textAlign:"left"}}>Create admin account and user account</li>
-            <p style={{marginTop:"120px", fontSize: "20px"}}>Coded by: Marlon Gumban</p>
             </div>
         );
     }

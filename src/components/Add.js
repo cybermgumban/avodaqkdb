@@ -8,6 +8,7 @@ class Add extends React.Component {
         super(props);
         this.state = {
             category: "jabber",
+            customer: "",
             title: "",
             description: "",
             ticket_tag: "",
@@ -27,6 +28,7 @@ class Add extends React.Component {
             url: `http://${serverIp}/avodaqkdb`,
             data: {
                 category: this.state.category,
+                customer: this.state.customer,
                 title: this.state.title,
                 description: this.state.description,
                 ticket_tag: this.state.ticket_tag,
@@ -67,6 +69,21 @@ class Add extends React.Component {
                         <option value="spark">Spark</option>
                         <option value="gen">General</option>
                         <option value="andtek">Andtek</option>
+
+                    </select>
+                </label> <br/>
+                <label>Which Top 5 Customer?: 
+                    <select
+                        style={{marginLeft: "50px", textAlignLast: "center", width: "800px"}}  
+                        value={this.state.customer} 
+                        name="customer" 
+                        onChange={this.handleChange}>
+                        <option defaultValue value="na">N/A</option>
+                        <option value="Mediacorp">Mediacorp</option>
+                        <option value="SAS">SAS</option>
+                        <option value="Dulwich College">Dulwich College</option>
+                        <option value="RHTLaw">RHTLaw</option>
+                        <option value="ABS">ABS</option>
 
                     </select>
                 </label> <br/>

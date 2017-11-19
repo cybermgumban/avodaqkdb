@@ -60,6 +60,7 @@ class ShowOne extends React.Component {
                                 pathname: `/function/edit/${this.props.params.title}`,
                                 state: {
                                     category: this.props.location.state.category,
+                                    customer: this.props.location.state.customer,
                                     description: this.props.location.state.description,
                                     id: this.props.location.state.id,
                                     ticket_tag: this.props.location.state.ticket_tag,
@@ -82,6 +83,7 @@ class ShowOne extends React.Component {
                     {resolution.map((db,index) => {
                     return <li key={index}>{db}</li>
                     })}
+                <p style={{fontSize: "10px", color: "gray"}}><b>Related to Top 5 Customer:</b> {this.props.location.state.customer}</p>
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>
 
         </div>

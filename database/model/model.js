@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const TitleSchema = new Schema ({
     category: String,
+    customer: String,
     title: {
         type: String,
         //required: [true, 'Title is required']

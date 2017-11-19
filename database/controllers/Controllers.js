@@ -26,7 +26,7 @@ module.exports = {
 
         Promise.all([ workaroundNew.save(), resolutionNew.save() ])
             .then((res) => {
-                const titleNew = new Title({ category: titleProps.category, title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag, workarounds: res[0]._id, resolutions: res[1]._id })
+                const titleNew = new Title({ category: titleProps.category, customer: titleProps.customer, title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag, workarounds: res[0]._id, resolutions: res[1]._id })
                 titleNew.save();
             }).catch(next);
     },
@@ -49,7 +49,7 @@ module.exports = {
 
         Title.findByIdAndUpdate(
             { _id: titleId }, 
-            { title: titleProps.title, description: titleProps.description, ticket_tag: titleProps.ticket_tag }, 
+            { title: titleProps.title, customer: titleProps.customer, description: titleProps.description, ticket_tag: titleProps.ticket_tag }, 
             { new:true } 
         ).then((result) => {
 
