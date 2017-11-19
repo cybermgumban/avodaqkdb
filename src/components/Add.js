@@ -56,7 +56,7 @@ class Add extends React.Component {
 
                 <label>Category: 
                     <select
-                        style={{marginLeft: "50px", textAlignLast: "center", width: "800px"}}  
+                        style={{marginLeft: "55px", textAlignLast: "center", width: "800px"}}  
                         value={this.state.category} 
                         name="category" 
                         onChange={this.handleChange}>
@@ -72,9 +72,9 @@ class Add extends React.Component {
 
                     </select>
                 </label> <br/>
-                <label>Which Top 5 Customer?: 
+                <label>Top 5 Customer?: 
                     <select
-                        style={{marginLeft: "50px", textAlignLast: "center", width: "800px"}}  
+                        style={{marginLeft: "5px", textAlignLast: "center", width: "800px"}}  
                         value={this.state.customer} 
                         name="customer" 
                         onChange={this.handleChange}>
@@ -89,7 +89,7 @@ class Add extends React.Component {
                 </label> <br/>
                 <label>Title: 
                     <input 
-                        style={{marginLeft: "83px", width: "800px"}} 
+                        style={{marginLeft: "88px", width: "800px"}} 
                         value={this.state.title}
                         type="text" 
                         name="title" 
@@ -97,7 +97,7 @@ class Add extends React.Component {
                 </label> <br />
                 <label>Description: 
                     <input 
-                        style={{marginLeft: "34px", width: "800px"}} 
+                        style={{marginLeft: "39px", width: "800px"}} 
                         value={this.state.description}
                         type="text" 
                         name="description" 
@@ -105,7 +105,7 @@ class Add extends React.Component {
                 </label> <br/>
                 <label>Related Tickets: 
                     <input 
-                        style={{marginLeft: "9px", width: "800px"}} 
+                        style={{marginLeft: "14px", width: "800px"}} 
                         value={this.state.ticket_tag}
                         type="text" 
                         name="ticket_tag" 
@@ -113,7 +113,7 @@ class Add extends React.Component {
                 </label> <br/> <br />
                 <label>Workaround: 
                     <textarea 
-                        style={{marginLeft: "29px", width: "800px", height: "100px"}} 
+                        style={{marginLeft: "34px", width: "800px", height: "100px"}} 
                         value={this.state.workarounds}
                         type="text" 
                         name="workarounds" 
@@ -121,12 +121,47 @@ class Add extends React.Component {
                 </label> <br/> <br />
                 <label>Resolution: 
                     <textarea 
-                        style={{marginLeft: "40px", width: "800px", height: "100px"}} 
+                        style={{marginLeft: "45px", width: "800px", height: "100px"}} 
                         value={this.state.resolutions}
                         type="text" 
                         name="resolutions" 
                         onChange={this.handleChange}/>
                 </label> <br/> <br />
+
+                    <p>================================</p>
+                    <p>To add images, please save the image(s) first in this path in NAS: PATH</p>
+                    <label> Please select file format: 
+                        <select
+                            style={{marginLeft: "5px", textAlignLast: "center"}}
+                            value={this.format} 
+                            name="format" 
+                            onChange={this.handleChange}>
+                            <option defaultValue value="jpg">JPEG</option>
+                            <option value="png">PNG</option>
+
+                        </select>
+                    </label> <br/>
+                    <label>Input filename as saved in the NAS folder: 
+                        <input 
+                            style={{marginLeft: "14px"}} 
+                            value={this.filename}
+                            type="text" 
+                            name="filename" 
+                            onChange={this.handleChange}/>
+                    </label> <br/>
+
+                    <button>Generate now!</button> <br/>
+                    <label>Result: 
+                        <input 
+                            style={{marginLeft: "14px"}} 
+                            value={`<img src={C:/Users/Marlon Gumban/Documents/pictures/${this.filename}.${this.format}} alt=${this.filename} />`}
+                            type="text" 
+                            name="result" 
+                            onChange={this.handleChange}/>
+                    </label>
+                    <p>================================</p>
+                    <br/>
+
                 <button onClick={this.addBtnClick}>Add!
                 </button>
             </div>
