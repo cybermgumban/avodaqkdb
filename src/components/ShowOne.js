@@ -27,7 +27,7 @@ class ShowOne extends React.Component {
                 }
             })
             alert("Successfully Deleted");
-            window.location.reload();
+            //window.location.reload();
         } else {
             alert("Delete Cancelled");
         }
@@ -76,12 +76,12 @@ class ShowOne extends React.Component {
                 <p style={{fontSize: "15px"}}><b>Description:</b> {this.props.location.state.description}</p>
                 <b style={{fontSize: "15px"}}>Troubleshooting / Workaround:</b>
                     {workaround.map((db,index) => {
-                    return <li key={index}>{db}</li>
+                    return <li key={index} style={{listStyle: "none", textIndent: "40px"}}>{db}</li>
                     })}
                 <br />
                 <b style={{fontSize: "15px"}}>Resolution:</b>
                     {resolution.map((db,index) => {
-                    return <li key={index}>{db}</li>
+                    return <li key={index}style={{listStyle: "none", textIndent: "40px"}}>{db}</li>
                     })}
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related to Top 5 Customer:</b> {this.props.location.state.customer}</p>
                 <p style={{fontSize: "10px", color: "gray"}}><b>Related Tickets:</b> {this.props.location.state.ticket_tag}</p>

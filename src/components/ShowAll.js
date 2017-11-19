@@ -67,7 +67,7 @@ class ShowAll extends React.Component {
                 {jabber.map((db, index) => {                                      
                     return (
                         <li key={index} style={li}>
-                            <Link to={{ 
+                            <Link key={index} style={li} to={{ 
                                 pathname: `/function/showone/${db.title}`,
                                 state: { customer: db.customer, description: db.description, category: db.category, id: db._id, ticket_tag: db.ticket_tag, workaround: db.workarounds[0].workaround_list, resolution: db.resolutions[0].resolution_list
                                 }}} >
