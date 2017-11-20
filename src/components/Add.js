@@ -128,7 +128,7 @@ class Add extends React.Component {
                         onChange={this.handleChange}/>
                 </label> <br/> <br />
 
-                    <p>================================</p>
+                    {/* <p>================================</p>
                     <p>To add images, please save the image(s) first in this path in NAS: PATH</p>
                     <label> Please select file format: 
                         <select
@@ -160,7 +160,7 @@ class Add extends React.Component {
                             onChange={this.handleChange}/>
                     </label>
                     <p>================================</p>
-                    <br/>
+                    <br/> */}
 
                 <button onClick={this.addBtnClick}>Add!
                 </button>
