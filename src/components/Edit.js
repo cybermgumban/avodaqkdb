@@ -8,6 +8,7 @@ class Edit extends React.Component {
         super(props);
         this.state = {
             category: "",
+            customer: "",
             title: "",
             ticket_tag: "",
             description: "",
@@ -70,6 +71,16 @@ class Edit extends React.Component {
         return (
             <div>
                 <h1>Let's Edit some data!</h1>
+
+                <p style={{color: "gray"}}><b>Top 5 Customer?:</b> {this.props.params.customer}</p>
+                <label><b>Top 5 Customer?:</b>
+                    <input 
+                        style={{marginLeft: "83px", width: "800px"}} 
+                        defaultValue={this.state.customer}
+                        type="text" 
+                        name="customer" 
+                        onChange={this.handleChange}/>
+                </label> <br /> <br />
 
                 <p style={{color: "gray"}}><b>Title:</b> {this.props.params.title}</p>
                 <label><b>Title:</b>

@@ -82,7 +82,7 @@ class Add extends React.Component {
                         <option value="Mediacorp">Mediacorp</option>
                         <option value="SAS">SAS</option>
                         <option value="Dulwich College">Dulwich College</option>
-                        <option value="RHTLaw">RHTLaw</option>
+                        <option value="Dulwich Thomson">Dulwich Thomson</option>
                         <option value="ABS">ABS</option>
 
                     </select>

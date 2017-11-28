@@ -11,7 +11,8 @@ class Disclaimer extends React.Component {
             <br /><br/> <br /> */}
             <br /> <br/>
             <h3 style={{textAlign:"left"}}>Finished Improvements:</h3>
-            <li style={{textAlign:"left"}}>Added tag for Top 5 customers in both GUI and Database</li>
+            <li style={{textAlign:"left"}}>Updated Top 5 customers in both GUI and Database</li>
+            <li style={{textAlign:"left"}}>Added "Top 5 Customer" in Edit Function</li>
 
             <br />
 

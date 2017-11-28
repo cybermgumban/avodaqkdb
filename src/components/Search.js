@@ -88,7 +88,9 @@ class Search extends React.Component {
                     arr.push(db) : 
                     db.ticket_tag.match(this.state.keyword) ?
                         arr.push(db) : 
-                            null
+                        db.customer.match(this.state.keyword) ?
+                            arr.push(db) : 
+                                null
             )
         })
         
